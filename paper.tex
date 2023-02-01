@@ -188,6 +188,8 @@ In the remainder of the paper, we first review the existing literature on design
 
 \section{Literature Review}
 
+\cite{finch2020towards} Towards unified dialogue system evaluation: A comprehensive analysis of current evaluation protocols
+
 Synthesis on conversational architecture
 
 Synthesis on measures
@@ -211,8 +213,7 @@ The initial query retrieved 2901 unique publications. The following selection cr
 \begin{itemize}
   \item Peer-reviewed publications written in English
   \item Voice-based or text-based disembodied conversational agents
-  \item Interaction study on the impact of designed conversational architecture elements on the perception of agents.
-  \item Users must interact with conversational agent in the study. Observer studies are excluded from the corpus
+  \item Experiment study on the impact of designed conversational architecture elements on the perception of agents.
   \item Measures the perceptions of the interaction or perceptions of the agent as part of the study
 \end{itemize}
 
@@ -250,7 +251,7 @@ Figure \ref{fig:heatmap}
 \subsection{Perception of Interaction with an Agent}
 %%%%%
 
-This section discusses user's perception of their interaction with a conversational agent. Engagement, accuracy, and satisfaction are the three variables used to evaluate how people perceive interactions with CAs. \textit{Engagement} measures user's attitude towards the task they are achieving through working with the agent, including how easy it is to use the system and its perceived usefulness, convenience and helpfulness for the user. Additionally, it includes the user's emotional responses to the interaction, such as annoyance, enjoyment, and irritation. \textit{Accuracy} measures whether the agent was perceived to be able to provide the correct answers in response to the user. \textit{Satisfaction} measures the whether the agent was able to fulfill user's expectations through the interaction encounter.
+This section discusses user's perception of their interaction with a conversational agent. \textbf{\textit{Engagement, accuracy, and satisfaction are the three variables used to evaluate how people perceive interactions with CAs}}. \textit{Engagement} measures user's attitude towards the task they are achieving through working with the agent, including how easy it is to use the system and its perceived usefulness, convenience and helpfulness for the user. Additionally, it includes the user's emotional responses to the interaction, such as annoyance, enjoyment, and irritation. \textit{Accuracy} measures whether the agent was perceived to be able to provide the correct answers in response to the user. \textit{Satisfaction} measures the whether the agent was able to fulfill user's expectations through the interaction encounter.
 
 Out of the list of publications that were evaluated, there is a good coverage on the effect of conversational architecture elements on the perception of interaction with an agent. Out of the three factors, engagement is the most frequently used measure to assess interaction quality, followed by satisfaction. Perceived accuracy of the agent is rarely used within literature, with only a few papers measuring this perception. 
 
@@ -260,7 +261,7 @@ For both text and voice modalities, lexical alignment had a positive effect on e
 %%
 \subsubsection{Engagement}
 %%
-For the elements in the language content category of conversational architecture, the use \textbf{self-disclosure} by agent had a positive effect on engagement, as the participants using the chatbot with small talk and self disclosure reported higher enjoyment after 3 weeks of daily interaction. \cite{lee2020hear}\cmt{[23]}. There are mixed results on the effect of \textbf{affective language} on engagement. One study found that CAs that uses encouraging words are rated as easier to use \cite{healey2013relating}\cmt{[39]}. However, the user of words with increased lexical emotional expressiveness did not have an effect on engagement \cite{zhu2022effects}\cmt{[26]}. The use of affective language may lead to negative impacts on engagement, as a system that uses an extroverted and overly familiar words is irritating to users. On the use of \textbf{humour}, survey result did not show a significant difference in the level of enjoyment, but qualitative feedback from participants reflected that humour made the interaction more engaging and immersive \cite{ceha2021can}\cmt{[57]}.
+For the elements in the language content category of conversational architecture, the use \textbf{self-disclosure} by agent had a positive effect on engagement, as the participants using the chatbot with small talk and self disclosure reported higher enjoyment after 3 weeks of daily interaction \cite{lee2020hear}\cmt{[23]}. There are mixed results on the effect of \textbf{affective language} on engagement. One study found that CAs that uses encouraging words are rated as easier to use \cite{healey2013relating}\cmt{[39]}. However, the user of words with increased lexical emotional expressiveness did not have an effect on engagement \cite{zhu2022effects}\cmt{[26]}. The use of affective language may lead to negative impacts on engagement, as a system that uses an extroverted and overly familiar words is irritating to users. On the use of \textbf{humour}, survey result did not show a significant difference in the level of enjoyment, but qualitative feedback from participants reflected that humour made the interaction more engaging and immersive \cite{ceha2021can}\cmt{[57]}.
 
 %%\textbf{Content} 
 
@@ -585,7 +586,7 @@ None of the studies included in this review has found any significant impact of 
 %* AM voice - lower speech rate and lower pitch, no significant difference on rating for truthful. \cite{dubiel2020persuasive}\cmt{[60]} 
 
 %%
-\subsubsection{Personality Traits \nopunct}
+\subsubsection{Personality Traits}
 %%
 
 There are significant difference found in the effect of language content on the perception of agent's personality traits. Conversational agents using emotionally expressive words are rated as more likable \cite{zhu2022effects}\cmt{[26]} and warm \cite{lee2019s}\cmt{[55]}. In Healey et al's study \cite{healey2013relating}\cmt{[39]}, there is a significant difference in the variances of the responses for friendliness of the agent between the agent using encouraging words compared to neutral utterances. As with the use of \textbf{humour}, participants rated the humorous agent as having a sense of humor, but it was not rated as more likable \cite{ceha2021can}\cmt{[57]}.
@@ -629,61 +630,31 @@ In the list of reviewed papers, there was only one study measuring the perceived
 %-------------
 \section{Discussions}
 
-\subsection{Human-human vs. Human-machine}
+\subsection{Inconsistencies in Perception Measures}
 
-* Impact of lexical alignment on people's perceived annoyance and likability differed in HHI (higher) and HCI (no impact). \cite{huiyang2022improving}\cmt{[17]}.
+A major roadblock in synthesizing the findings from existing academic research is the diversity and inconsistency of measurements towards the anthropomorphized perception of agents. It is difficult to assess whether perception measures should be compared with each other. Also, some measures combined anthropomorphized perceptions into a composite score, which makes it impossible to separate the perceptions into more granular details.
 
-\subsection{Perception Measures}
+Based on the literature reviewed in this paper, we noticed that similar perception concepts were \textbf{measured in different ways} through different surveys. For example, there are several approaches to measure the perceived \textit{human-likeness} of an agent. A commonly used survey is adapted from the Godspeed questionnaire \cite{bartneck2009measurement}, which measures human-likeness based on user's impression of the agent as fake / natural, machinelike / humanlike, unconscious / conscious, and artificial / lifelike (used by \cite{hoegen2019end}\cmt{[31]}, \cite{jeong2019exploring}\cmt{[10]} and \cite{ouchi2019should}\cmt{[59]}). Another way to measure human-likeness is adapted from Holtgraves et al.'s \cite{holtgraves2007perceiving} questionnaire, which asks users to assess the agent's perceived human-likeness, skillfulness, thoughtfulness, politeness, responsiveness and engagement (used by \cite{diederich2019emulating}\cmt{[25]} and  \cite{gnewuch2018faster}\cmt{[19]}). One study \cite{westerman2019believe}\cmt{[9]} used the Ascend of Man pictorial scale \cite{kteily2015ascent} as the measure of perceived human-likeness. It is unclear whether these different measures of perceived human-likeness are similar enough to be compared with each other.
 
-Construct validity - humanness, likeability, empathy, trust, engagement
+ In addition to different methods used to measure for the same perception, our detailed analysis revealed that the measures using the same label may have \textbf{drastically different meanings}. In Diedrech et al.'s study \cite{diederich2019emulating}\cmt{[25]}, \textit{empathy} measure is adapted from \cite{yan2013role} assessing whether the CA gives users individual or personal attention. In Daher et al.'s study \cite{daher2020empathic}\cmt{[58]}, they also measure the perception of empathy, but it is using the RoPE Scale \cite{charrier2019rope} with questions like "the robot cares about my feelings" or "the robot comforts me when I am upset." These two different measures of empathy seem to have different underlying meanings, one assessing the personalization aspect of CAs, while the other is assessing the emotional aspect of CAs. Another example is the measurement of \textit{trustworthiness}, with some constructs measuring the level of sensitive information user's are willing to share \cite{dinev2006privacy}, and some measuring the honesty and truthfulness of an agent \cite{lee2017enhancing}. 
 
-Used UX score to measure the perception of agent, which has questions like:
-I think the CA's response is pleasing
-I think the CA's response is trustworthy
-I think the CA's response is natural
-I think the CA's response can shorten the social distance between the CA and me.
-I think the CA's response is acceptable.
-Spans across different perceptions - cannot break it down for detailed analysis. \cite{ma2022ask}\cmt{[29]}
+Lastly, there are \textbf{composite measures} of anthropomorphized perception across different categories, making it difficult to break down perceptions into granular details for analysis. One such example is Ma et al's study \cite{ma2022ask}\cmt{[29]} on different approaches for CAs to reply to users' uncertain queries. UX score is used to measure the perception of an agent, which asks whether the user thinks the CA's response is pleasing / trustworthy / natural / acceptable / shorten the distance between CA and user. While the study has found significant impact of the use of formal language on UX score, it is not possible to breakdown the measure into perceptions of interaction (pleasing, acceptable), social connection (shorten the distance between CA and user), and humanness (natural, trustworthy). Similar for Hoegen et al.'s study \cite{hoegen2019end}\cmt{[31]} on the impact of conversational style matching, it is not possible to separate the overall interaction score into different perceptions as the composite measure contains questions measuring different categories of perceptions like interaction (engaging) and humanness (trust, likable).
 
-Overall interaction measure containing: 
-Would you continue interacting with the agent?
-How engaging is the agent?
-How focused is the agent?
-How emotional is the agent?
-How bored are you with the agent?
-Do you trust the agent?
-How likeable was the agent?
-Cannot break it down for specific perceptions give it is a composite measure. \cite{hoegen2019end}\cmt{[31]}
+In recent years there has been some effort towards unifying the evaluation of conversational agents, such as the work by Finch et al. \cite{finch2020towards} presenting a comprehensive analysis of current evaluation protocols. More work is needed to categorize and consolidate perception measures to make them consistent and comparable across various studies. 
 
-For discussions on mental well beings, agent using emojis is rated higher for attitude (emotional connection) . However, for agent with discussing physical well being, agent using emojis is rated as lower for attitude. 
-Attitude has emotional connection, coherent - coherent is an ability perception, vs. emotional connection is a social connection perception. \cite{fadhil2018effect}\cmt{[52]}
+%For discussions on mental well beings, agent using emojis is rated higher for attitude (emotional connection) . However, for agent with discussing physical well being, agent using emojis is rated as lower for attitude. 
+%Attitude has emotional connection, coherent - coherent is an ability perception, vs. emotional connection is a social connection perception. \cite{fadhil2018effect}\cmt{[52]}
 
-\subsection{Modality}
+\subsection{Other Influencing Factors}
 
-Did not separate - because similar 
-Affective language - may be a difference? significant for text, but not as much for voice?
+While the discussion in the Framework section above focuses on the overall effect of conversational architecture elements on anthropomorphized perceptions,  there are other nuanced influencing factors that impact user perceptions of agents. 
 
-\subsection{Confounding Factors}
+Depending on the \textbf{type of conversation} user is having with agents, it may lead to differences in perceptions for similar conversational architecture elements. Cox et al. \cite{cox2022does}\cmt{[27]} found that the perceived competence and appropriateness of tone of different language formality styles depend on the sensitivity of information discussed in the conversation. In this particular study, a formal language style is preferred in medical history discussions as it is matching to the expectation of users, but there is no difference in perception between formal and casual styles when discussing income level and credit scores. In Jeong et al's study \cite{jeong2019exploring}\cmt{[10]}, users found the agent using fillers less intelligent and likable in a task-oriented conversation, but found the same agent using fillers as slight more intelligent and likable in a social-oriented conversation. Another factor that could impact perceptions is the \textbf{anonymity} of conversation. Based on user feedback, Lee et al. \cite{lee2020hear}\cmt{[23]} found that the anonymity of a conversational agent is a driving factor encouraging people to self disclose without having to worried about judgements from the CA. The perception of the agent may be different if the user's identity is not anonymous.
 
-* Different perceptions of intelligence and likability for social vs. task-based interactions. \cite{jeong2019exploring}\cmt{[10]}
+Other than the type of conversation, \textbf{user's characteristics} can also be influencing factors on their perception of agents. For example, the effect of matching user's conversational style on perception of agents depend on user's own conversational style, as participants with high consideration conversational style rated the lexically aligned agent as more trustworthy \cite{hoegen2019end}\cmt{[31]}. In the study by Cox et al. \cite{cox2022does}\cmt{[27]}, participants with lower levels of privacy concerns as well as those who believe in robotic intelligence found the chatbot more enjoyable, warm, competent and appropriate. Similarly, participants with positive attitudes towards computers were significantly more likely to indicate that the usage of fillers by agents was a positive aspect of the conversation, compared to participants with neutral attitudes towards computers \cite{pfeifer2009should}\cmt{[12]}. Lastly, user's prior experience with conversational agents could impact perception of agents. Experienced users perceived the agent with a response delay as lower in social presence compared to the one without delay, as it is seen as inefficient to wait for the CA to respond. However, novice users perceived higher social presence conversing with the CAs using response delays as it is more similar to conversations with human partners \cite{gnewuch2018faster}\cmt{[19]}.
 
-* Participants with positive attitudes towards computers were significantly more likely to indicate that the usage of fillers by agents was a positive aspect of the conversation, compared to participants with neutral attitudes towards computers \cite{pfeifer2009should}\cmt{[12]}
 
-* Anonymity is a key to encouraging people to self-disclose, worried about human reactions / judgements -> may not observe the effects in the study if user identity is known. \cite{lee2020hear}\cmt{[23]}
-
-* Perception depend on the sensitivity of information. No differences in enjoyment, warmth, competence and appropriateness of tone for income level and credit score, but CA is seen as more competent and appropriate when discussing medical history. \cite{cox2022does}\cmt{[27]} - matching to the expectation of users is important.
-
-* Participants who believed in robotic intelligence were more likely to find the chatbot enjoyable, warm, competent and appropriate \cite{cox2022does}\cmt{[27]}
-
-* Participants with lower levels of privacy concerns found the chatbot more enjoyable, warm, competent and appropriate \cite{cox2022does}\cmt{[27]}
-
-* Participants with high consideration conversational style rated the agent as more trustworthy when it matcehd their conversational style, compared to when it did not. \cite{hoegen2019end}\cmt{[31]}
-
-\subsection{Integrated effect}
-
-* Mental model
-
-\subsection{Study Impact}
+\subsection{Study Design}
 
 \textbf{Interview vs experiment}
 * Humour - what's said vs. study results
@@ -693,13 +664,26 @@ Affective language - may be a difference? significant for text, but not as much 
 * \cite{zhu2022effects}\cmt{[26]}
 * \cite{cox2022does}\cmt{[27]}
 
+
+\subsection{Modality}
+
+TBD 
+Did not separate - because similar 
+Affective language - may be a difference? significant for text, but not as much for voice?
+
+\subsection{Gaps}
+
+* Combined effects - integrated mental model
+* Lack of investigations - name a few areas
+
+\subsection{Human-human vs. Human-machine}
+
+* Impact of lexical alignment on people's perceived annoyance and likability differed in HHI (higher) and HCI (no impact). \cite{huiyang2022improving}\cmt{[17]}.
+
 \subsection{Ethical Considerations}
 
 Self-disclosure encourage higher trust and intimacy, to disclose sensitive information. Who have access to this data? need to be aware of privacy / data sharing practices. \cite{lee2020hear}\cmt{[23]}
 
-\section{Limitations}
-
-Perception measures as mentioned in discussions - may not be comparing apples to apples
 
 \section{Conclusions}
 
