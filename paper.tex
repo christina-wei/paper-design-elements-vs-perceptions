@@ -5,6 +5,9 @@
 
 \usepackage[linewidth=1pt]{mdframed}
 \usepackage{lipsum}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{booktabs}
 
 \newcommand{\cmt}[1]{}%{\ignorespaces}
 
@@ -186,6 +189,10 @@ This paper attempts to address this gap in knowledge by investigating the follow
 
 In the remainder of the paper, we first review the existing literature on design frameworks for conversational agents and measures of anthropomorphized perceptions. We then describe our literature review and data analysis process, following by describing the design framework synthesized based on findings of the collected literature corpus. Finally, we discuss the critical gaps in research identified through our analysis, and propose key opportunities for future research.
 
+
+Design the conversational agents
+
+
 \section{Literature Review}
 
 \cite{finch2020towards} Towards unified dialogue system evaluation: A comprehensive analysis of current evaluation protocols
@@ -217,35 +224,132 @@ The initial query retrieved 2901 unique publications. The following selection cr
   \item Measures the perceptions of the interaction or perceptions of the agent as part of the study
 \end{itemize}
 
-We screened the titles and abstracts of the papers based on the selection criteria below which resulted in 221 papers. Reviewing the full articles of these publication resulted in <X> papers for analysis. A backward/forward search was also performed to find new publications, adding <X> papers to the corpus.
+We screened the titles and abstracts of the papers based on the selection criteria below which resulted in 221 papers. Reviewing the full articles of these publication resulted in 49 papers for analysis. An additional search for related literature was also performed to find new publications, adding 8 more papers to the corpus.
 
-<Add graphic of PRIMSA process>
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\columnwidth]{fig:prisma.png}
+  \caption{Literature search using PRISMA guidelines}
+  \label{fig:prisma}
+\end{figure}
+
+Figure \ref{fig:prisma}
 
 \subsection{Data Analysis}
 
-Categorization of perceptions \newline
-Categorization of social cues \newline
+
 
 \subsection{Dataset Characteristics}
+
 * Year and publication venue
+
+\begin{figure*}[h]
+  \centering
+  \includegraphics[width=\textwidth]{fig:paper.png}
+  \caption{Stacked barchart of number of papers by year and venue}
+  \label{fig:paper}
+\end{figure*}
+
+Figure \ref{fig:paper}
+
+
 \newline
-* Modality - voice vs. text
-\newline
-* Systems tested - WoZ, prototype, actual applications
+* Modality - voice vs. text Table \ref{tab:modality}
+
+\begin{table}[]
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Modality} & \textbf{No. Papers} \\ \midrule
+Voice             & 35                  \\
+Text              & 27                  \\ \bottomrule
+\end{tabular}%
+\caption{Number of paper for voice and text modalities}
+\label{tab:modality}
+\end{table}
+
+\section{Anthropomorphized Perceptions}
+
+Here is Table \ref{tab:perceptions} for perceptions.
+
+\begin{table*}[]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllc@{}}
+\toprule
+ & \textbf{Measure}   & \textbf{Contains}                                  & \textbf{No. Papers} \\ \midrule
+\multirow{3}{*}{\textbf{Perception of Interaction with an Agent}}    & Usability       & accuracy, ease of use, efficiency, helpfulness & 23 \\
+ & Engagement         & enjoyment, annoyance, desirable, intention to use  & 28         \\
+ & Satisfaction       & service satisfaction, quality of interaction       & 12         \\ \midrule
+\multirow{3}{*}{\textbf{Perception of Agent's Ability}}              & Intelligence    & knowledgeable, intelligent, expertise                             & 11 \\
+ & Competence         & competent, capable                                 & 4          \\
+ & Trust              & credibility, trustworthy, truthfulness, confidence & 15         \\ \midrule
+\multirow{3}{*}{\textbf{Perception of Social Connection with Agent}} & Social Presence & connectedness, familiarity, similarity, psychological distance    & 18 \\
+ & Conversation Tone  & appropriate, expressive, empathetic, persuasive    & 13         \\
+ & Intimacy           & intimate, rapport, quality of relationship         & 7          \\ \midrule
+\multirow{2}{*}{\textbf{Perception of Agent's Humanness}}            & Human-likeness  & human-like, natural, artificial, machine-like                     & 20 \\
+ & Personality Traits & friendly, kind, warm, creepy, likeable, polite     & 27         \\ \bottomrule
+\end{tabular}%
+}
+\caption{Perception measures}
+\label{tab:perceptions}
+\end{table*}
+
+
+
+%\multirow{3}{*}{\parbox{2cm}{\textbf{Perception of Interaction with an Agent}}} & Usability & accuracy, ease of use, efficiency, helpfulness & 
+
+%Usability
+%\cite{linnemann2018can}\cmt{[15]}\cite{huiyang2022improving}\cmt{[17]}\cite{spillner2021talk}\cmt{[18]}\cite{kim2020can}\cmt{[24]}\cite{wilhelm2022keep}\cmt{[28]}\cite{ma2022ask}\cmt{[29]}\cite{healey2013relating}\cmt{[39]}\cite{miehle2018exploring}\cmt{[51]}\cite{choi2020nobody}\cmt{[54]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{kraus2020effects}\cmt{[64]}\cite{cuadra2021my}\cmt{[67]}\cite{roy2021users}\cmt{[71]}\cite{chan2021kinvoices}\cmt{[74]}\cite{hu2022polite}\cmt{[76]}\cite{ceha2022expressive}\cmt{[77]}\cite{haas2022keep}\cmt{[78]}\cite{jestin2022effects}\cmt{[81]}\cite{misu2011toward}\cmt{[83]}\cite{ashktorab2019resilient}\cmt{[88]}\cite{kim2019comparing}\cmt{[89]}
+
+%Engagement
+%\cite{linnemann2018can}\cmt{[15]}\cite{huiyang2022improving}\cmt{[17]}\cite{spillner2021talk}\cmt{[18]}\cite{gnewuch2022opposing}\cmt{[20]}\cite{lee2020hear}\cmt{[23]}\cite{kim2020can}\cmt{[24]}\cite{zhu2022effects}\cmt{[26]}\cite{cox2022does}\cmt{[27]}\cite{ma2022ask}\cmt{[29]}\cite{andrews2012system}\cmt{[38]}\cite{healey2013relating}\cmt{[39]}\cite{miyamoto2017improving}\cmt{[46]}\cite{miehle2018exploring}\cmt{[51]}\cite{fadhil2018effect}\cmt{[52]}\cite{ceha2021can}\cmt{[57]}\cite{elsholz2019exploring}\cmt{[61]}\cite{cuadra2021my}\cmt{[67]}\cite{volkel2021examining}\cmt{[69]}\cite{roy2021users}\cmt{[71]}\cite{yang2021effect}\cmt{[72]}\cite{xiao2021let}\cmt{[73]}\cite{chan2021kinvoices}\cmt{[74]}\cite{volkel2022user}\cmt{[75]}\cite{ceha2022expressive}\cmt{[77]}\cite{go2021conversational}\cmt{[80]}\cite{jestin2022effects}\cmt{[81]}\cite{moilanen2022measuring}\cmt{[82]}\cite{kim2019comparing}\cmt{[89]}
+
+%Satisfaction                                                                 
+%\cite{pfeifer2009should}\cmt{[12]}\cite{gnewuch2018faster}\cmt{[19]}\cite{diederich2019emulating}\cmt{[25]}\cite{wilhelm2022keep}\cmt{[28]}\cite{ma2022ask}\cmt{[29]}\cite{hoegen2019end}\cmt{[31]}\cite{yang2017perceived}\cmt{[44]}\cite{choi2020nobody}\cmt{[54]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{roy2021users}\cmt{[71]}\cite{hu2022polite}\cmt{[76]}\cite{ceha2022expressive}\cmt{[77]}
+
+Categorization of social cues \newline
+* adapted from Taxonomy of social cues
+* added a middle layer
+* combined elements as we are studying disembodied agents
+
+\section{Conversation Architecture}
+
+Here is Table \ref{tab:cues} for conversation architecture elements.
+
+\begin{table*}[]
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllc@{}}
+\toprule
+ & \textbf{Measure}      & \textbf{Contains}                                      & \multicolumn{1}{l}{\textbf{No. Papers}} \\ \midrule
+\multirow{4}{*}{\textbf{Linguistic Content}}    & Affective Language & emotional expressions, sentiment-adaptive responses & 11 \\
+ & Social Talk           & self-disclosure, social dialogue                       & 7                                       \\
+ & Humour                & humorous content, jokes                                & 5                                       \\
+ & Agent-Initiated Content & elicit user feedback, proactivity, conversation repair & 4                                       \\ \midrule
+\multirow{4}{*}{\textbf{Linguistic Style}}      & Formality          & formal vs. casual, honorific expressions                               & 9  \\
+ & Alignment             & content matching, lexical alignment, agreeableness     & 7                                       \\
+ & Elaborateness         & elaborate, concise, sentence structure                 & 6                                       \\
+ & Disfluency            & fillers, interjections, repetitions                    & 5                                       \\ \midrule
+\multirow{3}{*}{\textbf{Non-Linguistic Format}} & Prosody            & pitch, intonation, speech rate, spoken accent                          & 12 \\
+ & Text Variation        & typo, capitalization, response delay, typing indicator & 5                                       \\
+ & Emotional Cue         & emoticons, laughter                                    & 6                                       \\ \bottomrule
+\end{tabular}%
+%}
+\caption{Conversation architecture elements}
+\label{tab:cues}
+\end{table*}
+
 
 \section{Framework}
 %Wrote based on papers up to [60], 25 papers
 
 \begin{figure*}[h]
   \centering
-  \includegraphics[width=\textwidth]{heatmap.png}
+  \includegraphics[width=\textwidth]{fig:heatmap-impact.png}
   \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element.}
   \Description{This graph shows the number of papers measuring the effect of conversational architecture elements on different perception measures of conversational agents. Conversational architecture elements are categorized into content (affective language, self-disclosure, humour), format (disfluency, typo, capitalization, speech rate, response delay), and style (lexical alignment, formality, emoticons, prosody). Perceptions are categorized into perception of interaction with an agent (engagement, satisfaction, accuracy), perception of social connection with an agent (intimacy, conversation tone, social presence), and perception of agent's humanness (human-likeness, trustworthiness, personality traits).}
-  \label{fig:heatmap}
+  \label{fig:heatmap-impact}
 \end{figure*}
 
-Figure \ref{fig:heatmap}
-
+Figure \ref{fig:heatmap-impact}
 
 
 %%%%%
@@ -268,16 +372,54 @@ For the elements in the language style category of conversational architecture, 
 
 For the elements in the presentation format category of conversational architecture, auditory aspects of \textbf{prosody} such as speech rate and expressive tone of voice had different impacts on engagement. In one study, users enjoyed their interaction with the CA and perceived it as easier to use, as they felt the level of agent's social behaviour is matched with their emotional states \cite{kim2020can}\cmt{[24]}. However, another study did not find any impact of emotional expressive of voice on the user engagement \cite{zhu2022effects}\cmt{[26]}. On the speech rate for CAs, a normal rate is perceived as more convenient compared to a faster rate of speech \cite{choi2020nobody}\cmt{[54]}. On the visual presentation side, the study from Westerman et al. \cite{westerman2019believe}\cmt{[9]} showed that the use of \textbf{typos} by chatbots negatively impacted the perception of working with a CA on the specific task, while the use of \textbf{capitalization} did not yield any significant impacts.
 
-Content: Humour
+\textbf{Content: Humour}
 * No overall significant difference between conventional method vs. agent using humour for enjoyment. Specifically, men enjoyed the agent's jokes more than women.  \cite{miyamoto2017improving}\cmt{[46]}.
+* Motivation to continue the conversation significant increased after day 2 for the humorous agent \cite{go2021conversational}\cmt{[80]}
 
-Style: Language Formality
+\textbf{Style: Language Formality}
 * Users spent more time with the Shakespearean chatbot version with more non-task related user inputs. Enjoyment was measured but no report \cite{elsholz2019exploring}\cmt{[61]}
+* commanding/formal wording was rated significantly more useful than the informal wording; while the informal wording was rated as significantly more annoying than the commanding/formal wording. No impact on desirability. \cite{jestin2022effects}\cmt{[81]}
+* High conscientiousness (formal) and high extroversion (casual) chatbot personality have higher user engagement. \cite{moilanen2022measuring}\cmt{[82]}
+* Analysis of ease of use reveals that there are no significant main effects for platform questionnaire vs. chatbot, and conversational style formal vs. casual.\cite{kim2019comparing}\cmt{[89]}
+
+\textbf{Social talk / elaborate}
+* Not significant importance between introvert and extrovert agents. But the machine-like speaking agent is rated lower. \cite{roy2021users}\cmt{[71]}
+* usefulness depended on the task \cite{haas2022keep}\cmt{[78]}
+* High extroversion chatbot personality have the higher user engagement \cite{moilanen2022measuring}\cmt{[82]}
+
+\textbf{Disfluency}
+* Using moderately repetitive utterances resulted in higher desire to continue the dialogue with the agent. \cite{yang2021effect}\cmt{[72]}
+* Interjections did not have any impacts of cognitive workload \cite{ceha2022expressive}\cmt{[77]}
+
+\textbf{Proactive}
+* Different framing has impacts on the perceived disruptiveness of the agent. \cite{xiao2021let}\cmt{[73]}
+
+\textbf{Prosody}
+* No impact on annoying, undesirable, useful \cite{jestin2022effects}\cmt{[81]}
+* Dialog-style conversation using prosodic cues is rated as less easy to understand than the reading-style \cite{misu2011toward}\cmt{[83]}
+
+\textbf{Combined}
+* (Extraverted: emoticons, self-disclosure, talkative, affective language / Introverted: formal style, less talkative) all personalities have similar usability ratings. Also, users have greater desire to interact with the extraverted chatbot \cite{volkel2022user}\cmt{[75]}
+* (Politeness: affective language + elaborateness of speech) no impact on usability \cite{hu2022polite}\cmt{[76]}
+
 
 %%
 \subsubsection{Accuracy}
 %%
 There are only a few studies that measured the perception of accuracy of conversational agents for an interaction. A couple of studies reported the effect of the use of language style of \textbf{lexical alignment}. One study of a text-based CA resulted in higher perceived response accuracy \cite{huiyang2022improving}\cmt{[17]}, while the other study with voice-based CA did not find any significant differences \cite{linnemann2018can}\cmt{[15]}. Dubiel et al.'s study \cite{dubiel2020persuasive}\cmt{[60]} on \textbf{prosody} did not find any significant differences on the rating for accuracy across agents with different speech rates and pitch.
+
+\textbf{Social talk}
+* Introverted agent is more efficient. \cite{roy2021users}\cmt{[71]}
+* Efficiency depended on the task \cite{haas2022keep}\cmt{[78]}
+
+\textbf{Language Formality}
+* commanding/formal wording was rated significantly more effective than informal wording \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Prosody}
+* No impact on effectiveness \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Repair}
+* One reason for choosing repair strategy preference is efficiency and efficacy. \cite{ashktorab2019resilient}\cmt{[88]}
 
 %%
 \subsubsection{Satisfaction}
@@ -293,13 +435,22 @@ Studies have found that presentation formats have significant effects on user sa
 \textbf{Format: Prosody}
 * There is no significant effect on customer satisfaction of the CA between male-gendered and female-gendered voices. \cite{habler2019effects}\cmt{[63]}
 
+\textbf{Social talk}
+* Not significant importance between introvert and extrovert agents. But the machine-like speaking agent is rated lower. \cite{roy2021users}\cmt{[71]}
+
+\textbf{Combined}
+* (Politeness: affective language + elaborateness of speech) no impact on user satisfaction \cite{hu2022polite}\cmt{[76]}
+
 %%%%%
 \subsection{Perception of Agent's Ability}
 %%%%%
 
 This section discusses how user perceives the agent's ability in conditions with different conversational architecture elements. It is aiming at measuring the differences in the perception with similar system's capabilities. Out of the two variables used to evaluate this perception, \textit{Intelligence} measures whether the agent is knowledgeable, sensible, and is seem as overall intelligent. \textit{Competence} on the other hand measures the overall perception on how well the agent is handling the conversation. Out of the list of publications that were evaluated, there are only a few papers that measured the perceived ability of an agent.
 
-[TODO] * Associations between conversational architecture elements and perceptions
+\textit{To be incorporated}
+
+\textbf{Repair}
+* perceived quality of the interaction is muhc higher in repair condition when the agent made a mistake; rating is lower if no mistake was present. \cite{cuadra2021my}\cmt{[67]}
 
 %%
 \subsubsection{Intelligence}
@@ -308,6 +459,12 @@ This section discusses how user perceives the agent's ability in conditions with
 On analyzing the impact of different language styles on the perception of intelligence, a couple of papers studied the effect of including \textbf{disfluencies} into agent's speech. One paper found that there is no significant impact on how knowledgeable the agent is perceived as \cite{pfeifer2009should}\cmt{[12]}. Another study showed that using fillers like "um" and "uh" decreased the agent's perceived intelligence overall \cite{jeong2019exploring}\cmt{[10]}. Upon further analysis, the authors noticed a difference between task vs. social conversations, as users perceive the intelligence to be lower in task-oriented situations, but the perception of intelligence is slightly increased in social-oriented situations. The use of \textbf{lexical alignment} did not seem to impact user's perception of an agent's intelligence, as there is no significant difference reported in the agent's domain knowledge between the aligned vs. non-aligned conditions.
 
 On the impact of presentation format, Dubiel et al's study on \textbf{prosody} using different speech rates and pitches did not yield any significant differences on the agent rating for knowledgeable.
+
+\textbf{Prosody}
+* VA using kin's voice is rated as more intelligent. \cite{chan2021kinvoices}\cmt{[74]}
+
+\textbf{Repair}
+* One reason for choosing repair strategy preference is perceived intelligence and capability. \cite{ashktorab2019resilient}\cmt{[88]}
 
 %%
 \subsubsection{Competence}
@@ -320,9 +477,12 @@ There are only a couple of papers that discussed the impact of conversational ar
 
 \textbf{Format: Prosody}
 * There is no significant effect on perceived performance of the CA between male-gendered and female-gendered voices. \cite{habler2019effects}\cmt{[63]}
+* For expertise, multilingual students rated higher the non-native English-speaking virtual human. \cite{feijoo2021effects}\cmt{[70]}
 
 \textbf{Format: Proactivity}
 * Certain proactive styles like notification strategy (conservatively proactive, letting participants know that the agent has found a solution) was evaluated as significantly higher perceived competence compared to the non-strategy. \cite{kraus2020effects}\cmt{[64]}
+
+
 
 %%%%%
 \subsection{Perception of Social Connection with an Agent}
@@ -347,6 +507,17 @@ For text-based conversational agents, including a \textbf{response delay} increa
 
 \textbf{Content: Affective language and Style: Disfluency}
 * Rated higher that agent listened openly to participants' emotions, as that agent can feel waht the user is feeling. \cite{hu2021enhancing}\cmt{[56]}
+* social condition didn't have an impact on social presence \cite{lubold2016effects}\cmt{[86]}
+
+\textbf{Prosody}
+* VA using kin's voice is rated as more socially present and closer psychological connection with user. \cite{chan2021kinvoices}\cmt{[74]}
+* voice plus social condition has higher social presence than the social condition \cite{lubold2016effects}\cmt{[86]}
+
+\textbf{Humour}
+* Familiarity with the agent is rated higher at the end of the study (day 7) compared to non-humorous agent \cite{go2021conversational}\cmt{[80]}
+
+\textbf{Laughter}
+* Laughter had no impact on social presence of an agent \cite{niewiadomski2013laugh}\cmt{[85]}
 
 %%
 \subsubsection{Conversation Tone}
@@ -359,12 +530,31 @@ On the style of language used by the agent, \textbf{formality} did not seem to i
 \textbf{Content: Affective language and Style: Disfluency}
 Respond with empathy to the user. \cite{hu2021enhancing}\cmt{[56]}
 
+\textbf{Disfluency}
+* Using moderately repetitive utterances resulted in higher perceived empathy. \cite{yang2021effect}\cmt{[72]}
+
+\textbf{Language Formality}
+* commanding/formal wording was rated significantly more appropriate and assertive than informal wording \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Prosody}
+* No impact on appropriate and assertive \cite{jestin2022effects}\cmt{[81]}
+* Dialog-style conversation using prosodic cues is rated as more appropriate than the reading-style \cite{misu2011toward}\cmt{[83]}
+
 %%
 \subsubsection{Intimacy}
 %%
 On the use of language content, a conversational agent that included \textbf{self-disclosure} when conversing with participants resulted in higher level of intimacy over time than CAs that did not self disclose \cite{lee2020hear}\cmt{[23]}. On the other hand, using the style of \textbf{lexical alignment} by using the words that were already used by the participant did not result in higher quality of relationship with the agent \cite{linnemann2018can}\cmt{[15]}.
 
 There are several studies investigating the effect of conversational format on intimacy with a CA. Specifically on voice \textbf{prosody}, using an affective tone of voice increased the perceived intimacy and similarity with an agent \cite{kim2020can}\cmt{[24]}. Comparing voice agents with different \textbf{speech rates}, users rated the default rate as more intimate than a faster rate of speech \cite{choi2020nobody}\cmt{[54]}, noting that the default rate is more human-like and natural. Westerman et al's study on different text formats of conversation \cite{westerman2019believe}\cmt{[9]} showed that \textbf{typos} negatively impacted the perceived social attraction of the agent, while \textbf{capitalization} did not have any impacts.
+
+\textbf{Disfluency}
+* Interjections did not have any impacts of quality of relationship, but it did result in higher emotional rapport. \cite{ceha2022expressive}\cmt{[77]}
+
+\textbf{Affective Language}
+* social condition didn't have an impact on social presence \cite{lubold2016effects}\cmt{[86]}
+
+\textbf{Prosody}
+* voice and social condition didn't have an impact on social presence \cite{lubold2016effects}\cmt{[86]}
 
 %%%%%
 \subsection{Perception of Agent's Humanness}
@@ -388,21 +578,28 @@ On the impact of different conversation formats, Zhu et al. did not find a signi
 \textbf{Style: Disfluency}
 * (Voice) No significant difference in naturalness rating for About Myself text, but showed that naturalness is higher for fluent system compared to disfluent speech \cite{wester2015artificial}\cmt{[14]}.
 
+\textbf{Prosody}
+* VA using kin's voice is rated as more human-like. \cite{chan2021kinvoices}\cmt{[74]}
+* Dialog-style conversation using prosodic cues is rated as less human-like than the reading-style \cite{misu2011toward}\cmt{[83]}
 
+\textbf{Social talk / Elaborateness}
+* Naturalness depends on the task \cite{haas2022keep}\cmt{[78]}
 
-%%
-\subsubsection{Trustworthiness}
-%%
+\textbf{Language Formality}
+* No impact on artificial or humanlike perceptions \cite{jestin2022effects}\cmt{[81]}
 
-For the use of language content, agents using more \textbf{affective language} is seen as less trustworthy, as users felt it was being overly familiar \cite{andrews2012system}\cmt{[38]}. On the other hand, users conversing with agents that used \textbf{self-disclosure} content reported more trust towards the agent compared to the non disclosure group \cite{lee2020hear}\cmt{[23]}.
+\textbf{Prosody}
+* Matthew voice is rated as least artificial  \cite{jestin2022effects}\cmt{[81]}
 
-None of the studies included in this review has found any significant impact of language style, \textbf{lexical alignment} \cite{hoegen2019end}\cmt{[31]}\cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}, \textbf{disfluency} \cite{pfeifer2009should}\cmt{[12]}, and \textbf{emoticons} \cite{wilhelm2022keep}\cmt{[28]} on the perceived trustworthiness of CAs. Similarly for conversational format, there is not significant difference on the rating for truthfulness of the agent across different voice \textbf{prosody} settings \cite{dubiel2020persuasive}\cmt{[60]}.
+\textbf{Laughter}
+* Laughter was not rated as natural in an agent \cite{niewiadomski2013laugh}\cmt{[85]}
 
-\textbf{Format: Prosody}
-* No significant difference in trust ratings across different voice prosody settings with differences in pitch. \cite{cambre2019one}\cmt{[62]}
+\textbf{Combined}
+* (Politeness: affective language + elaborateness of speech) no impact on likability, but positive politeness interactions are rated as more polite \cite{hu2022polite}\cmt{[76]}
 
-\textbf{Format: Proactivity}
-* Overall trust in the system did not differ significantly. The intervention style is less trusted than conservative strategies - too obstructive and imposing. Proactive should be subtle  \cite{kraus2020effects}\cmt{[64]}
+\textbf{Repair}
+* One reason for choosing repair strategy preference is naturalness. \cite{ashktorab2019resilient}\cmt{[88]}
+
 
 %%
 \subsubsection{Personality Traits}
@@ -414,6 +611,8 @@ On the impact of language style, various studies on \textbf{lexical alignment} s
 
 In the list of reviewed papers, there was only one study measuring the perceived trustworthiness of an agent based on different conversational format of \textbf{prosody}. Dubiel et al. found that an agent using slower speech rate is perceived as more trustworthy as compared to other voice prosody settings \cite{dubiel2020persuasive}\cmt{[60]}.
 
+\textit{To be incorporated}
+
 \textbf{Content: Humour}
 * An agent that uses humourous content is assessed to be more funny \cite{khooshabeh2011does}\cmt{[37]}.
 
@@ -421,12 +620,61 @@ In the list of reviewed papers, there was only one study measuring the perceived
 * (Voice) Both About Myself and Speed Dating ratings has shown system scored significantly differently on the Big-5 personality traits. Disfluency makes the voice sound more neurotic, less open, less extrovert and less conscientious \cite{wester2015artificial}\cmt{[14]}.
 
 \textbf{Format: Prosody}
-* Low voice pitch rated not as friendly as the other ones. No impact on other traits like assertive and politeness. \cite{cambre2019one}\cmt{[62]}
+* Low voice pitch rated not as friendly as the other ones. No impact on other traits like assertive and politeness. \cite{tolmeijer2021female}\cmt{[62]}
+* VA using kin's voice is rated as more likable. \cite{chan2021kinvoices}\cmt{[74]}
+* No impact on entertaining or friendly  \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Repair}
+* When VA corrected in the condition it didn't make a mistake, it is seen as anxious. Otherwise it is perceived as calm and emotionally stable. \cite{cuadra2021my}\cmt{[67]}
+* One reason for choosing repair strategy preference is politeness. \cite{ashktorab2019resilient}\cmt{[88]}
+
+\textbf{Social talk}
+* Using more social talk is positive correlated with extroversion. \cite{volkel2021manipulating}\cmt{[68]}
+* Not significant importance between introvert and extrovert agents. \cite{roy2021users}\cmt{[71]}
+* Likability depends on the task \cite{haas2022keep}\cmt{[78]}
+
+\textbf{Language Formality}
+* Informal wording was rated as strongly more entertaining and friendly than the commanding/formal wording. \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Agreeableness}
+* Being highly confrontational (less agreeable) is rated as less conscientious \cite{volkel2021manipulating}\cmt{[68]}
+* Designing for more agreeable resulted in personality rated as more agreeable \cite{volkel2021examining}\cmt{[69]}
+
+\textbf{Combined}
+* (Extraverted: emoticons, self-disclosure, talkative, affective language / Introverted: formal style, less talkative) extraverted personality rated as more extraverted \cite{volkel2022user}\cmt{[75]}
+
+%%
+\subsubsection{Trustworthiness}
+%%
+
+For the use of language content, agents using more \textbf{affective language} is seen as less trustworthy, as users felt it was being overly familiar \cite{andrews2012system}\cmt{[38]}. On the other hand, users conversing with agents that used \textbf{self-disclosure} content reported more trust towards the agent compared to the non disclosure group \cite{lee2020hear}\cmt{[23]}.
+
+None of the studies included in this review has found any significant impact of language style, \textbf{lexical alignment} \cite{hoegen2019end}\cmt{[31]}\cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}, \textbf{disfluency} \cite{pfeifer2009should}\cmt{[12]}, and \textbf{emoticons} \cite{wilhelm2022keep}\cmt{[28]} on the perceived trustworthiness of CAs. Similarly for conversational format, there is not significant difference on the rating for truthfulness of the agent across different voice \textbf{prosody} settings \cite{dubiel2020persuasive}\cmt{[60]}.
+
+\textbf{Format: Prosody}
+* No significant difference in trust ratings across different voice prosody settings with differences in pitch. \cite{tolmeijer2021female}\cmt{[62]}
+* No impact on trustworthiness  \cite{jestin2022effects}\cmt{[81]}
+
+\textbf{Format: Proactivity}
+* Overall trust in the system did not differ significantly. The intervention style is less trusted than conservative strategies - too obstructive and imposing. Proactive should be subtle  \cite{kraus2020effects}\cmt{[64]}
+
+\textbf{Language Formality}
+* No impact on trustworthiness \cite{jestin2022effects}\cmt{[81]}
+
 
 %-------------
 \section{Discussions}
 
-\subsection{Inconsistencies in Perception Measures}
+\subsection{RQ1 - synthesis of conversation architecture elements}
+
+Sometimes a study is covering multiple conversational element cues, hard to break it out. For example, extroverted personality used in \cite{volkel2022user}\cmt{[75]} has emoticons, affective language, talkative, and self-disclosure. Need to break it down.
+
+Also, breaking down "personalities" to its core components.
+
+
+\subsection{RQ2 - synthesis of perceptions}
+
+\subsubsection{Inconsistencies in Perception Measures}
 
 A major roadblock in synthesizing the findings from existing academic research is the diversity and inconsistency of measurements towards the anthropomorphized perception of agents. It is difficult to assess whether perception measures should be compared with each other. Also, some measures combined anthropomorphized perceptions into a composite score, which makes it impossible to separate the perceptions into more granular details.
 
@@ -441,7 +689,21 @@ In recent years there has been some effort towards unifying the evaluation of co
 %For discussions on mental well beings, agent using emojis is rated higher for attitude (emotional connection) . However, for agent with discussing physical well being, agent using emojis is rated as lower for attitude. 
 %Attitude has emotional connection, coherent - coherent is an ability perception, vs. emotional connection is a social connection perception. \cite{fadhil2018effect}\cmt{[52]}
 
-\subsection{Other Influencing Factors}
+\subsubsection{Relationship between perceptions}
+
+Response delay: social presence has a significant effect on intention to use. 
+\cite{gnewuch2022opposing}\cmt{[20]}
+
+Perceived intelligence positively associated with perceived usefulness, perceived ease of use, initial trust, and perceived anthropomorphism. Perceived anthropomorphism is associated with perceived enjoyment, and intention to adopt. Perceived usefulness and perceived enjoyment impacts intention to adopt. \cite{moussawi2021perceptions}\cmt{[36]}
+
+The size of the effect for language we observed is clearly higher than the size of the effect for voice. \cite{habler2019effects}\cmt{[63]}
+
+VA self-repair can backfire if time or accuracy is of the essence. (repair and accuracy) \cite{cuadra2021my}\cmt{[67]}
+
+
+\subsection{RQ3 - relationship between conversation architecture elements and perceptions}
+
+\subsubsection{Other Influencing Factors}
 
 While the discussion in the Framework section above focuses on the overall effect of conversational architecture elements on anthropomorphized perceptions,  there are other nuanced influencing factors that impact user perceptions of agents. 
 
@@ -452,34 +714,30 @@ Other than the type of conversation, \textbf{user's characteristics} can also be
 * Format: Response delay - Novice users perceived the agent as more socially present, but experienced users had a negative effect \cite{gnewuch2022opposing}\cmt{[20]}
 * Content: Humour - no overall significant difference between conventional method vs. agent using humour for enjoyment. Specifically, men enjoyed the agent's jokes more than women.  \cite{miyamoto2017improving}\cmt{[46]}.
 * Format: Proactivity - significant interaction between proactive dialogue strategies and task difficulty for perceived competence and perceived reliability. For easier tasks, system help is not really required. \cite{kraus2020effects}\cmt{[64]}
+* Preference for the level of social talk depended on the task, even within the same transactional context, as users preferred high level for playing a song, but low level for writing a text. \cite{volkel2021manipulating}\cmt{[68]}
+* Correlation between user's personality of agreeableness vs. preference for agreeable level of chatbot \cite{volkel2021examining}\cmt{[69]}
+* For expertise, multilingual students rated higher the non-native English-speaking virtual human. \cite{feijoo2021effects}\cmt{[70]}
+* Participants felt irritated when humorous statements were made when they talked about experiencing sadness \cite{go2021conversational}\cmt{[80]}
 
-\subsection{Study Design}
+%\subsubsection{Study Design}
 
-\textbf{Interview vs experiment}
-* Humour - what's said vs. study results
+%\textbf{Interview vs experiment}
+%* Humour - what's said vs. study results
 
-\textbf{Observer study vs. interaction study}
-* In observer study, participants attributed higher integrity (trustworthiness), response accuracy and likeability to the agent with lexical alignment, but this effect was not observed in the interaction study. Also, interaction study had lower cognitive demand but no effect in the observer study. \cite{linnemann2018can}\cmt{[15]}
-* \cite{zhu2022effects}\cmt{[26]}
-* \cite{cox2022does}\cmt{[27]}
+%\textbf{Observer study vs. interaction study}
+%* In observer study, participants attributed higher integrity (trustworthiness), response accuracy and likeability to the agent with lexical alignment, but this effect was not observed in the interaction study. Also, interaction study had lower cognitive demand but no effect in the observer study. \cite{linnemann2018can}\cmt{[15]}
+%* \cite{zhu2022effects}\cmt{[26]}
+%* \cite{cox2022does}\cmt{[27]}
 
 
-\subsection{Modality}
+\subsubsection{Modality}
 
 TBD 
 Did not separate - because similar 
 Affective language - may be a difference? significant for text, but not as much for voice?
 
-\subsection{Relationship between perceptions}
 
-Response delay: social presence has a significant effect on intention to use. 
-\cite{gnewuch2022opposing}\cmt{[20]}
-
-Perceived intelligence positively associated with perceived usefulness, perceived ease of use, initial trust, and perceived anthropomorphism. Perceived anthropomorphism is associated with perceived enjoyment, and intention to adopt. Perceived usefulness and perceived enjoyment impacts intention to adopt. \cite{moussawi2021perceptions}\cmt{[36]}
-
-The size of the effect for language we observed is clearly higher than the size of the effect for voice. \cite{habler2019effects}\cmt{[63]}
-
-\subsection{Gaps}
+\subsubsection{Gaps}
 
 Combined effects
 * integrated mental model \cite{knijnenburg2016inferring}\cmt{[34]}
@@ -487,15 +745,17 @@ Combined effects
 
 Lack of investigations - name a few areas
 
-\subsection{Human-human vs. Human-machine}
+%\subsubsection{Human-human vs. Human-machine}
 
-* Impact of lexical alignment on people's perceived annoyance and likability differed in HHI (higher) and HCI (no impact). \cite{huiyang2022improving}\cmt{[17]}.
+%* Impact of lexical alignment on people's perceived annoyance and likability differed in HHI (higher) and HCI (no impact). \cite{huiyang2022improving}\cmt{[17]}.
 
-\subsection{Ethical Considerations}
+\subsubsection{Ethical Considerations}
 
 Self-disclosure encourage higher trust and intimacy, to disclose sensitive information. Who have access to this data? need to be aware of privacy / data sharing practices. \cite{lee2020hear}\cmt{[23]}
 
-Evidence for the influence of voice gender and pitch on stereotypical trait attribution. Active trait attribution is missing as most participants attributes to the negative side of traits for CAs. \cite{cambre2019one}\cmt{[62]}
+Evidence for the influence of voice gender and pitch on stereotypical trait attribution. Active trait attribution is missing as most participants attributes to the negative side of traits for CAs. \cite{tolmeijer2021female}\cmt{[62]}
+
+The social and emotional benefits of self-repair in interaction need to be balanced against the creepiness of the monitoring and modelling needed to make self-repair possible. \cite{cuadra2021my}\cmt{[67]}
 
 \section{Conclusions}
 
