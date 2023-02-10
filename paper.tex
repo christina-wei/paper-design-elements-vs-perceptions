@@ -71,7 +71,7 @@
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
 % \title[short title]{How to Make Pinocchio a Real Boy? Designing conversational architecture elements to achieve desirable anthropomorphized perceptions}
-\title[Bot's Guide to Being Human]{Bot's Guide to Being Human: Investigating the Effect of Conversational Architecture Elements on the Anthropomorphized Perceptions of Conversational Agents}
+\title[Bot's Guide to Being Human]{Bot's Guide to Being Human: Investigating the Effect of Conversation Architecture Elements on the Anthropomorphized Perceptions of Conversational Agents}
 % Blurring the line between human and bots
 
 
@@ -175,7 +175,7 @@ Conversational agents (CAs) are software-based systems, either voice of text-bas
 
 Anthropomorphism is defined as the attribution of traits that we typically associate with being distinctly human to nonhuman entities \cite{waytz2010sees}. For example, users tend to personify conversational agents like Amazon Alexa by using person pronouns instead of object pronouns in online reviews \cite{purington2017alexa}.  Research shows that anthropomorphic design is beneficial to establishing and maintaining trust between users and conversational agents \cite{seeger2021chatbots}. Also, speakers tend to align their lexical choices with conversational agents, similar to human-human conversations \cite{cowan2015does}. Anthropomorphism has been shown to ease user interactions, e.g. making agents more approachable, engaging, and trustworthy when they exhibit human characteristics \cite{qiu2009evaluating}. These processes are of particular interest for human-agent communication because they form the basis for user expectations and predispositions regarding agents' behavior, reliability of the information, etc. \cite{kuzminykh2020genie}.
 
-One of the key factors for anthropomorphized perception is how conversational agents convey information through verbal or non-verbal cues. Studies have found that conversational agents are perceived as more socially present and emotionally intelligent if they use sentiment-adaptive response based on user's utterances, resulting in higher user satisfaction \cite{diederich2019emulating} \cite{yang2017perceived}. Also, CAs that mimic user behaviour through lexical alignment reduce users' cognitive workload, resulting in higher engagement with the interaction \cite{spillner2021talk}. Non-verbal cues such as expressive prosody contribute to higher perceived intimacy with the user, as well as higher perceived enjoyment and ease of use \cite{kim2020can}. However, conversational architecture design may lead to negative consequences, such as an agent with an extroverted personality may be seen as less trustworthy, as users are irritated by the system's overly familiar attitude \cite{andrews2012system}.
+One of the key factors for anthropomorphized perception is how conversational agents convey information through verbal or non-verbal cues. Studies have found that conversational agents are perceived as more socially present and emotionally intelligent if they use sentiment-adaptive response based on user's utterances, resulting in higher user satisfaction \cite{diederich2019emulating}\cite{yang2017perceived}. Also, CAs that mimic user behaviour through lexical alignment reduce users' cognitive workload, resulting in higher engagement with the interaction \cite{spillner2021talk}. Non-verbal cues such as expressive prosody contribute to higher perceived intimacy with the user, as well as higher perceived enjoyment and ease of use \cite{kim2020can}. However, conversational architecture design may lead to negative consequences, such as an agent with an extroverted personality may be seen as less trustworthy, as users are irritated by the system's overly familiar attitude \cite{andrews2012system}.
 
 Even though there are existing research efforts investigating the effect of various conversational architecture elements on the anthropomorphized perception of agents, there is no clear view on the overall landscape on the state of research to understand what has been studied and what needs more efforts. Some reasons for this gap could be due to the lack of consistency in perception measures such as humanness or empathy. There are various questionnaires used in the studies (e.g. Godspeed Questionnaire) but their definitions for perceptions may be different. Also, there are various confounding factors like prior experience and domain of usage that makes it hard to generalize design principles for anthropomorphized perception of agents.
 
@@ -193,22 +193,24 @@ In the remainder of the paper, we first review the existing literature on design
 Design the conversational agents
 
 
-\section{Literature Review}
+%\section{Literature Review}
 
-\cite{finch2020towards} Towards unified dialogue system evaluation: A comprehensive analysis of current evaluation protocols
+%\cite{finch2020towards} Towards unified dialogue system evaluation: A comprehensive analysis of current evaluation protocols
 
-Synthesis on conversational architecture
+%Synthesis on conversational architecture
 
-Synthesis on measures
+%Synthesis on measures
 
-Connections between conversational architecture elements and measures
+%Connections between conversational architecture elements and measures
 
 
 \section{Methods}
 
+This section describes the research methodologies for the search procedure, selection criteria and data analysis process.
+
 \subsection{Search Procedure}
 
-We reviewed and selected relevant literature related to designed conversational architecture elements and perceptions of conversational agent following PRISMA guidelines \cite{prisma}. Searches were carried out in the ACM Digital Library between January 1 and January 15, 2023. Based on search terms used in previously published literature reviews on conversational agents \cite{clark2019state}\cite{rapp2021human} , the following keywords have been identified to search for publications related to conversational user interfaces:
+Following PRISMA guidelines \cite{prisma}, we reviewed and selected literature relevant to the relationships between the specifics of conversation architecture elements and anthropomorphized perceptions of CAs. Searches were carried out in the ACM Digital Library between January 1 and January 15, 2023. During initial analysis, it didn't seem like there were common terms used to refer to either conversation architecture elements, or anthropomorphized perceptions. As such, search terms were kept general to literature related to conversational agents. Based on search terms used in previously published literature reviews \cite{clark2019state}\cite{rapp2021human} , the following keywords have been identified to search for publications related to conversational user interfaces:
 \newline
 
 \begin{mdframed}
@@ -219,12 +221,13 @@ We reviewed and selected relevant literature related to designed conversational 
 The initial query retrieved 2901 unique publications. The following selection criteria are applied to identify literature related to the effect of conversational architecture on perception of agents:
 \begin{itemize}
   \item Peer-reviewed publications written in English
-  \item Voice-based or text-based disembodied conversational agents
-  \item Experiment study on the impact of designed conversational architecture elements on the perception of agents.
-  \item Measures the perceptions of the interaction or perceptions of the agent as part of the study
+  \item Voice-based or text-based conversational agents
+  \item Experiment study on the impact of conversation architecture elements on the anthropomorphized perceptions of agents
+  \item Impact of conversation architecture elements can be separated from other effects (e.g. embodiment)
+
 \end{itemize}
 
-We screened the titles and abstracts of the papers based on the selection criteria below which resulted in 221 papers. Reviewing the full articles of these publication resulted in 49 papers for analysis. An additional search for related literature was also performed to find new publications, adding 8 more papers to the corpus.
+We screened the titles and abstracts of the papers based on the selection criteria below which resulted in 221 papers. Reviewing the full articles of these publication resulted in 49 papers for analysis. An additional search for related literature was also performed to find new publications, adding 8 more papers to the corpus. We identified 57 relevant articles that met our selection criteria (see Figure \ref{fig:prisma}).
 
 \begin{figure}[h]
   \centering
@@ -233,15 +236,11 @@ We screened the titles and abstracts of the papers based on the selection criter
   \label{fig:prisma}
 \end{figure}
 
-Figure \ref{fig:prisma}
+\subsubsection*{Literature Corpus Characteristics}
 
-\subsection{Data Analysis}
+The papers reviewed (n=57) were published between May 2011 and November 2022. More than 75\% of the papers were published in or after 2019, with a slight trend upwards over the years (see Figure \ref{fig:paper}). The vast majority of the papers in our corpus were published in conference proceedings (n=50), with the remainder papers published in journals. Out of the papers published in conferences, the top conferences were The ACM Conference on Human Factors in Computing Systems (n=16), Conversational User Interfaces (n=7), Human-Agent Interaction (n=4), and Intelligent Virtual Agents (n=4). Out of the papers published in journals, some venues include the International Journal of Human-Computer Interaction (n=2) and Interacting with Computers (n=1).
 
-
-
-\subsection{Dataset Characteristics}
-
-* Year and publication venue
+On the modality characteristics of the conversational agents in the corpus, there is a roughly even split between the modalities, with slightly more papers (n=30) studying voice-based CAs, and the rest (n=27) studying text-based CAs.
 
 \begin{figure*}[h]
   \centering
@@ -250,42 +249,39 @@ Figure \ref{fig:prisma}
   \label{fig:paper}
 \end{figure*}
 
-Figure \ref{fig:paper}
+\subsection{Data Analysis}
 
+\subsubsection*{Anthropomorphized Perceptions}
+The exact quotes of anthropomorphized perception measurements were extracted from each paper. Inductive thematic analysis was used to group these verbatim quotes into codes based on their meanings. For example, the code likeability of the agent contains the questionnaire item "this voice agent was likeable" used by \cite{cuadra2021my}\cmt{[67]}, Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed}'s set of questions on likeability used by \cite{linnemann2018can}\cmt{[15]}, and Subjective Assessment of Speech System Interface (SASSI) questionnaire \cite{hone2000towards}\cmt{sassi}'s set of questions on likeability used by  \cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}. This step resulted in 83 unique codes. The codes are then organized based similarity of the meanings, resulting in 11 basic themes. For example, the basic theme of \textit{personality traits} of the agent contains measurements such as likeability, friendliness, and warmth. Lastly, the 11 basic themes are categorized into 4 organizing themes: \textit{perception of interaction with agent, perception of agent's ability, perception of social connection with agent, and perception of agent's humanness} (Table \ref{tab:perceptions}).
 
-\newline
-* Modality - voice vs. text Table \ref{tab:modality}
+\subsubsection*{Conversation Architecture Elements}
+The conversation architecture elements used in the study were extracted from each paper. Some of the papers were applying multiple elements to the CA design, such as the the anthropomorphic design used in this study \cite{seeger2021chatbots}\cmt{[35]}. In the case where multiple elements were used, the codes broke down the conversation architecture into its core components. For example, the anthropomorphic design used in Seeger et al's study \cite{seeger2021chatbots}\cmt{[35]} was broken down to the elements of emotional expressions, is-typing indicator, emoticons, and response delay to capture as codes. 58 unique codes were created as part of this process, capturing elements like sentiment-adaptive responses \cite{diederich2019emulating}\cmt{[25]}, lexical alignment \cite{spillner2021talk}\cmt{[18]}, and typos \cite{westerman2019believe}\cmt{[9]}. Codes were then organized based on similarity of the elements. For example, the basic theme of \textit{disfluency} contains elements of fillers \cite{jeong2019exploring}\cmt{[10]}\cite{wester2015artificial}\cmt{[14]}, interjections \cite{ceha2022expressive}\cmt{[77]}\cite{hu2021enhancing}\cmt{[56]}, and repetitions \cite{yang2021effect}\cmt{[72]}. Lastly, these basic themes are then categorized into organizing themes adapted from the social cues taxonomy structure by Feine et al \cite{feine2019taxonomy}. Based on this paper, the Verbal-Content category is mapped to our organizing theme of \textit{linguistic content}, and the Verbal-Style category is mapped to our organizing theme of \textit{linguistic style}.
+Given our analysis focuses on the text and voice aspects of a conversational agent and does not analyze the embodiment aspects of design, the visual category is not applicable for our analysis. Also, we collapsed the auditory and invisible categories into the organizing theme of \textit{non-linguistic format} (Table \ref{tab:cues}).
 
-\begin{table}[]
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Modality} & \textbf{No. Papers} \\ \midrule
-Voice             & 35                  \\
-Text              & 27                  \\ \bottomrule
-\end{tabular}%
-\caption{Number of paper for voice and text modalities}
-\label{tab:modality}
-\end{table}
+\subsubsection*{Relationship Between Anthropomorphized Perceptions and Conversation Architecture Elements}
+Based on the codes developed for anthropomorphized perceptions and conversation architecture elements above, we extracted the relationships between perceptions and architecture elements from each paper, noting whether the architecture element had an impact of on the perceptions. Out of the 57 papers, 264 connections between anthropomorphized perceptions and conversation architecture elements were found. To analyze specifically the relationships between the specifics of conversation architecture that affect the anthropomorphized perceptions of CAs, 69 connections that did not result in significant relationships were discarded, resulting in 195 relationships for analysis. For example, the specific connection between style matching and user satisfaction was discarded because Hoegen et al. \cite{hoegen2019end}\cmt{[31]} did not find a significant difference between the style matching agent and the non-style matching agent for overall interaction satisfaction. Out of the 195 relationships, 185 were relationships between individual architecture elements and perceptions. These single architecture element to perception relationships are visualized as a heatmap based on literature coverage within the literature review corpus, as seen in Figure \ref{fig:heatmap-impact}. Perceptions impacted by the composite of multiple architecture elements in an agent will be discussed in more details in the Composite Architecture Elements section.
 
-\section{Anthropomorphized Perceptions}
+\section{Findings}
 
-Here is Table \ref{tab:perceptions} for perceptions.
+TBD
+
+\subsection{Anthropomorphized Perceptions}
 
 \begin{table*}[]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllc@{}}
 \toprule
- & \textbf{Measure}   & \textbf{Contains}                                  & \textbf{No. Papers} \\ \midrule
-\multirow{3}{*}{\textbf{Perception of Interaction with an Agent}}    & Usability       & accuracy, ease of use, efficiency, helpfulness & 23 \\
+\textbf{Category} & \textbf{Theme}   & \textbf{Sample Codes}                                  & \textbf{No. Papers} \\ \midrule
+\multirow{3}{*}{Perception of Interaction with Agent}    & Usability       & accuracy, ease of use, efficiency, helpfulness & 23 \\
  & Engagement         & enjoyment, annoyance, desirable, intention to use  & 28         \\
  & Satisfaction       & service satisfaction, quality of interaction       & 12         \\ \midrule
-\multirow{3}{*}{\textbf{Perception of Agent's Ability}}              & Intelligence    & knowledgeable, intelligent, expertise                             & 11 \\
+\multirow{3}{*}{Perception of Agent's Ability}              & Intelligence    & knowledgeable, intelligent, expertise                             & 11 \\
  & Competence         & competent, capable                                 & 4          \\
  & Trust              & credibility, trustworthy, truthfulness, confidence & 15         \\ \midrule
-\multirow{3}{*}{\textbf{Perception of Social Connection with Agent}} & Social Presence & connectedness, familiarity, similarity, psychological distance    & 18 \\
- & Conversation Tone  & appropriate, expressive, empathetic, persuasive    & 13         \\
+\multirow{3}{*}{Perception of Social Connection with Agent}  & Conversation Tone  & appropriate, expressive, empathetic, persuasive    & 13 \\
+ & Social Presence & connectedness, familiarity, similarity, psychological distance    & 18        \\
  & Intimacy           & intimate, rapport, quality of relationship         & 7          \\ \midrule
-\multirow{2}{*}{\textbf{Perception of Agent's Humanness}}            & Human-likeness  & human-like, natural, artificial, machine-like                     & 20 \\
+\multirow{2}{*}{Perception of Agent's Humanness}            & Human-likeness  & human-like, natural, artificial, machine-like                     & 20 \\
  & Personality Traits & friendly, kind, warm, creepy, likeable, polite     & 27         \\ \bottomrule
 \end{tabular}%
 }
@@ -293,55 +289,69 @@ Here is Table \ref{tab:perceptions} for perceptions.
 \label{tab:perceptions}
 \end{table*}
 
+As shown in Table \ref{tab:perceptions}, there are four organizing themes defined for the anthropomorphized perceptions of conversational agents covering 11 basic themes of perception. The details of each theme are discussed below.
+
+\textbf{Perception of interaction with a CA} evaluates the overall interaction quality users had with the conversational agent. The three basic themes for this perceptions are usability, engagement and satisfaction. \textit{Usability} measures the utilitarian aspects of the interaction, whether it was accurate, easy to use, efficient or helpful. Some commonly used methods to measure usability include the response accuracy portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, or the NASA Task Load Index (NASA-TLX) \cite{hart1988development}\cmt{nasa} to measure cognitive workload. Questions such as "the system is easy to use" or "it is easy to understand the agent" are also measures of usability. \textit{Engagement} on the other hand measures users' emotional reactions, whether they have enjoyed the conversation with CA, or annoyed or frustrated with the interaction. Some commonly used methods to measure engagement include  the annoyance portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, and the Use Engagement Scale (UES) \cite{o2018practical}\cmt{ues}. Questions such as "I enjoyed using the system" or "I felt frustrated with the agent" are also measures of engagement. Lastly, \textit{Satisfaction} measures users' overall satisfaction interacting with the agent. Questions such as "the overall assessment of conversing with the CA was satisfactory" are used to measure this perception.
+
+\textbf{Perception of a CA's ability} evaluates the perceived capabilities of the agent. While there are some elements of system performance in this measure, the main aspect we are interested in is the perception differences for agents with identify system capabilities but with different architecture elements. Specifically, \textit{intelligence} measures the agent's expertise and knowledge, and it is commonly administered through the Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} on the set of questions related to perceived intelligence. Also survey questions such as asking users about the agent's intelligence and domain knowledge are used to measure perceived intelligence. \textit{Competence} takes intelligence one step further by evaluating the agent's ability to put its intelligence into practice. To measure a CA's competence, there are usually surveys or qualitative feedback that the agent is capable and competent, and that the users have confidence in the agent's ability to get the job done. Lastly, \textit{trust} evaluates agent's truthfulness, credibility and benevolence. Some commonly used methods to evaluate trust include the Trust Propensity Scale \cite{mayer1999effect} and the Individualized Trust Scale (ITS) \cite{wheeless1977measurement}. Questions such as "is the agent honest" and "can I trust the agent with sensitive information" are also measures of trust.
+
+\textbf{Perception of the social connection with a CA} evaluates the emotional connections that users have with agents. The three basic themes of conversation tone, social presence and intimacy are included in this category. \textit{Conversation tone} measure the affective impression of the agent's tone, such as empathy, expressiveness, or passionate. Also, it measures whether the tone used by the agent is persuasive or appropriate for the conversation. \textit{Social presence} measures the sense of connectness and psychological distance users has with an agent. Some aspects in this measure include a sense of familiarity or similarity with the agent, whether users feel the agent behaves like them or have similar attitudes to them. The measure of \textit{Intimacy} extends social presence into the realm of the quality of relationships with an agent. Some commonly used measures include the set of social attraction questions from the interpersonal attraction questionnaire \cite{mccroskey1975development} and the quality of relationship inventory (QRI) \cite{pierce1997assessing}. These questionnaires include questions like "I think the agent could be a friend of mine", or "I feel we could establish a personal relationship with each other".
+
+\textbf{Perception of a CA's humanness} evaluates human-likeness and the anthropomorphized personality traits that users assign to agents. \textit{Human-likeness} measures whether the agent presented itself as natural and human-like, or artificial and machine-like. The Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} set of questions related to anthropomorphism and the Ascent of Man scale \cite{kteily2015ascent} are commonly used methods to assess human-likeness. Survey questions with semantic scales such as "human-like / machine-like" and "artificial / natural" are also used for this perception. \textit{Personality traits} captures the human characteristics that are attributes to the agent, such as warm, friendly, likeable, and polite. This is commonly captured in the qualitative feedback from users, commenting on whether the agent is extroverted or introverted, or the human characteristics they perceive the agent such as funny or witty. Some studies used the measure of the Big-5 personality traits \cite{gosling2003very} to map an agent's disposition on various personality dimensions.
+
+Overall there is good coverage of perception measures based on the list of papers reviewed in our corpus. The most commonly measured perceptions are related to the interaction with agent, followed by the perception of agent's humanness. There are two basic themes that are the least measured compared to the others: competence under the perception of agent's ability, and intimacy under the perception of social connection with agent. This may be due to the controlled lab settings for the experiments, where participants are given the scenarios for interaction. This environment is not conducive to forming relationships with a conversational partner, as noted by Linnerman et al. in their discussions \cite{linnemann2018can}\cmt{[15]}. Also, the same factor could impact the assessment of agent's abilities, as the users may not feel like they have the expertise to assess an agent's competence. These factors could contribute to the reasons why competency and intimacy are not as frequently measured in experimental studies.
+
+% Add citations
+
+\subsection{Conversation Architecture Elements}
+
+As shown in Table \ref{tab:cues}, there are three categories defined for the conversation architecture elements covering 10 different themes. The details of each category and theme are discussed below.
+
+The category of \textbf{linguistic content} maps to the content category under verbal cues in Feine et al's taxonomy, which refers to elements expressed with written or spoken words that are related to the strict and literal meaning of a message (i.e. what is said) \cite{feine2019taxonomy}. The theme of \textit{affective language} captures the injection of emotional words or phrases into the agent's utterance, such as affective expressions \cite{seeger2021chatbots}\cmt{[35]}\cite{yang2017perceived}\cmt{[44]}\cite{zhu2022effects}\cmt{[26]}, sentiment-adaptive responses \cite{diederich2019emulating}\cmt{[25]}, and encouraging words \cite{healey2013relating}\cmt{[39]}. \textit{Social talk} captures non-task related conversations with the user to build social connection, such as self-disclosure \cite{lee2020hear}\cmt{[23]} and social dialogue \cite{volkel2021manipulating}\cmt{[68]}\cite{lubold2016effects}\cmt{[86]}. The theme of \textit{humour} is similar to social talk but specific to CA's attempt to include jokes in its utterances. The separation of social talk and humor is based on findings from previous research, where user's attitude towards humour is different between human-human conversations vs. human-agent conversations \cite{clark2019makes}. We would like to capture the relationship between humour and agent perceptions differently from social talk. Lastly, the theme of \textit{agent-initiated content} captures utterances that are driven by the agent without direct prompts from the user. This elements in this theme include conversation repairs \cite{cuadra2021my}\cmt{[67]}\cite{ashktorab2019resilient}\cmt{[88]} and proactive content like eliciting feedback \cite{xiao2021let}\cmt{[73]}.
+
+The category of \textbf{linguistic style} maps to the style category under verbal cues in Feine et al's taxonomy, which refers to elements expressed with written or spoken words that are related to the meaningful deployment of language variation in a message (i.e. how something is said) \cite{feine2019taxonomy}. The theme of \textit{formality} describes the language style used by the conversational agent, whether it is formal vs. casual, such as using honorific expressions to address users \cite{ouchi2019should}\cmt{[59]}. \textit{Alignment} captures the degree that the agent aligns its utterances to the users, such as lexical alignment on the content and structural of the sentences \cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}, as well as agreement with the user \cite{volkel2021examining}\cmt{[69]}. \textit{Elaborateness} captures the sentence complexity and length of the utterances. For example, Roy et al. explored the differences in perception for variations in elaborateness such as "Cloudly, possibility of snow, high: 4, low: -10" vs "Today will be cloudy, with a high of 4 and a low of -10. Snow is predicted" \cite{roy2021users}\cmt{[71]}. Lastly, the category of \textit{disfluency} captures tye style of using non-lexical utterances like filler words ("um, uh") \cite{hu2021enhancing}\cmt{[56]}\cite{jeong2019exploring}\cmt{[10]}, or repetition of words within a sentence \cite{yang2021effect}\cmt{[72]}. 
+
+Lastly, the category of \textbf{non-linguistic format} maps loosely to the elements in auditory and invisible categories in Feine et al's taxonomy \cite{feine2019taxonomy}. These are auditory or textual variations in the presentation of the agent's utterances. In the theme of \textit{prosodic cue}, it captures vocal qualities like gender of voice \cite{habler2019effects}\cmt{[63]}\cite{jestin2022effects}\cmt{[81]}, and speech rate \cite{choi2020nobody}\cmt{[54]}. \textit{Text variations} include different formats that text-based agents use to present information to users, like emoticons \cite{kim2019comparing}\cmt{[89]}\cite{wilhelm2022keep}\cmt{[28]}, typos \cite{westerman2019believe}\cmt{[9]}, and response delays \cite{gnewuch2022opposing}\cmt{[20]}\cite{seeger2021chatbots}\cmt{[35]}.
+
+Overall the spread of conversation architecture elements relevant to anthropomorphized perceptions are evenly distributed across linguistic content, linguistic style, and non-linguistic format.  Looking at the different themes, there is good coverage of studies on the impact of affective language and prosodic cues on anthropomorphized perceptions. However, it seemed like there is a lack of studies exploring the effect of agent-initiative content on the perception of agents. There are various existing literature on this theme such as conversation repairs \cite{komatani2010online}\cite{reinkemeier2022repair} and agent proactively sharing content with users \cite{dubiel2019inquisitive}\cite{zargham2022understanding}, but they were not included in this systematic literature review because they did not have measures of anthropomorphized perceptions of the CA. This may be because conversations with CAs have historically being driven by the user, with some recent effort to understand the opportunities to be more proactive \cite{cowan2023introduction}, as existing research are focused on the functional aspects of designing an agent instead of exploring into the anthropomorphized perceptions.
 
 
-%\multirow{3}{*}{\parbox{2cm}{\textbf{Perception of Interaction with an Agent}}} & Usability & accuracy, ease of use, efficiency, helpfulness & 
-
-%Usability
-%\cite{linnemann2018can}\cmt{[15]}\cite{huiyang2022improving}\cmt{[17]}\cite{spillner2021talk}\cmt{[18]}\cite{kim2020can}\cmt{[24]}\cite{wilhelm2022keep}\cmt{[28]}\cite{ma2022ask}\cmt{[29]}\cite{healey2013relating}\cmt{[39]}\cite{miehle2018exploring}\cmt{[51]}\cite{choi2020nobody}\cmt{[54]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{kraus2020effects}\cmt{[64]}\cite{cuadra2021my}\cmt{[67]}\cite{roy2021users}\cmt{[71]}\cite{chan2021kinvoices}\cmt{[74]}\cite{hu2022polite}\cmt{[76]}\cite{ceha2022expressive}\cmt{[77]}\cite{haas2022keep}\cmt{[78]}\cite{jestin2022effects}\cmt{[81]}\cite{misu2011toward}\cmt{[83]}\cite{ashktorab2019resilient}\cmt{[88]}\cite{kim2019comparing}\cmt{[89]}
-
-%Engagement
-%\cite{linnemann2018can}\cmt{[15]}\cite{huiyang2022improving}\cmt{[17]}\cite{spillner2021talk}\cmt{[18]}\cite{gnewuch2022opposing}\cmt{[20]}\cite{lee2020hear}\cmt{[23]}\cite{kim2020can}\cmt{[24]}\cite{zhu2022effects}\cmt{[26]}\cite{cox2022does}\cmt{[27]}\cite{ma2022ask}\cmt{[29]}\cite{andrews2012system}\cmt{[38]}\cite{healey2013relating}\cmt{[39]}\cite{miyamoto2017improving}\cmt{[46]}\cite{miehle2018exploring}\cmt{[51]}\cite{fadhil2018effect}\cmt{[52]}\cite{ceha2021can}\cmt{[57]}\cite{elsholz2019exploring}\cmt{[61]}\cite{cuadra2021my}\cmt{[67]}\cite{volkel2021examining}\cmt{[69]}\cite{roy2021users}\cmt{[71]}\cite{yang2021effect}\cmt{[72]}\cite{xiao2021let}\cmt{[73]}\cite{chan2021kinvoices}\cmt{[74]}\cite{volkel2022user}\cmt{[75]}\cite{ceha2022expressive}\cmt{[77]}\cite{go2021conversational}\cmt{[80]}\cite{jestin2022effects}\cmt{[81]}\cite{moilanen2022measuring}\cmt{[82]}\cite{kim2019comparing}\cmt{[89]}
-
-%Satisfaction                                                                 
-%\cite{pfeifer2009should}\cmt{[12]}\cite{gnewuch2018faster}\cmt{[19]}\cite{diederich2019emulating}\cmt{[25]}\cite{wilhelm2022keep}\cmt{[28]}\cite{ma2022ask}\cmt{[29]}\cite{hoegen2019end}\cmt{[31]}\cite{yang2017perceived}\cmt{[44]}\cite{choi2020nobody}\cmt{[54]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{roy2021users}\cmt{[71]}\cite{hu2022polite}\cmt{[76]}\cite{ceha2022expressive}\cmt{[77]}
-
-Categorization of social cues \newline
-* adapted from Taxonomy of social cues
-* added a middle layer
-* combined elements as we are studying disembodied agents
-
-\section{Conversation Architecture}
-
-Here is Table \ref{tab:cues} for conversation architecture elements.
-
-\begin{table*}[]
+\begin{table*}[h]
 %\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lllc@{}}
 \toprule
- & \textbf{Measure}      & \textbf{Contains}                                      & \multicolumn{1}{l}{\textbf{No. Papers}} \\ \midrule
-\multirow{4}{*}{\textbf{Linguistic Content}}    & Affective Language & emotional expressions, sentiment-adaptive responses & 11 \\
+ \textbf{Category} & \textbf{Theme}      & \textbf{Sample Codes}                                      & \multicolumn{1}{l}{\textbf{No. Papers}} \\ \midrule
+\multirow{4}{*}{Linguistic Content}    & Affective Language & emotional expressions, sentiment-adaptive responses & 11 \\
  & Social Talk           & self-disclosure, social dialogue                       & 7                                       \\
  & Humour                & humorous content, jokes                                & 5                                       \\
  & Agent-Initiated Content & elicit user feedback, proactivity, conversation repair & 4                                       \\ \midrule
-\multirow{4}{*}{\textbf{Linguistic Style}}      & Formality          & formal vs. casual, honorific expressions                               & 9  \\
+\multirow{4}{*}{Linguistic Style}     & Formality          & formal vs. casual, honorific expressions                               & 9  \\
  & Alignment             & content matching, lexical alignment, agreeableness     & 7                                       \\
  & Elaborateness         & elaborate, concise, sentence structure                 & 6                                       \\
- & Disfluency            & fillers, interjections, repetitions                    & 5                                       \\ \midrule
-\multirow{3}{*}{\textbf{Non-Linguistic Format}} & Prosody            & pitch, intonation, speech rate, spoken accent                          & 12 \\
- & Text Variation        & typo, capitalization, response delay, typing indicator & 5                                       \\
- & Emotional Cue         & emoticons, laughter                                    & 6                                       \\ \bottomrule
+ & Disfluency            & fillers, interjections, repetitions                    & 6                                       \\ \midrule
+\multirow{2}{*}{Non-Linguistic Format}     & Prosodic Cue            & pitch, intonation, speech rate, spoken accent                          & 12 \\
+ & Text Variation        & typo, capitalization, emoticons, response delay & 9                                         \\ \bottomrule 
 \end{tabular}%
 %}
 \caption{Conversation architecture elements}
 \label{tab:cues}
 \end{table*}
 
+\subsection{Relationship Between Anthropomorphized Perceptions and Conversation Architecture Elements}
+
+
+
+
+
 
 \section{Framework}
 %Wrote based on papers up to [60], 25 papers
 
-\begin{figure*}[h]
+While the number of papers studying voice (n=27) vs. text (n=30) modalities is not significantly different, there are some interesting trends in the perceptions studied for CAs with different modalities. Overall, there are less perceptions of agent studied for text-based agents (n=101) as compared to voice-based agents (n=163).
+ 
+This is especially evident in the perception of social connection with agent and perception of agent's humanness. For the perception of social connection with a CA, there are only 19 perceptions measured for text-based agents, while there are 35 perceptions measured for voice-based agents. Similarly for perception of agent's humanness, there are 36 perceptions measured for text-based agents, as compared to 52 perceptions of voice-based agents. This highlights that there is a 
+
+\begin{figure*}[]
   \centering
   \includegraphics[width=\textwidth]{fig-heatmap-impact.png}
   \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element.}
@@ -664,6 +674,12 @@ None of the studies included in this review has found any significant impact of 
 
 %-------------
 \section{Discussions}
+
+%Research challenges and opportunities
+
+%Ethical considerations
+
+%Limitations and future work
 
 \subsection{RQ1 - synthesis of conversation architecture elements}
 
