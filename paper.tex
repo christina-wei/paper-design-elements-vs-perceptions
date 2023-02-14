@@ -72,9 +72,7 @@
 %% The "title" command has an optional parameter,
 %% allowing the author to define a "short title" to be used in page headers.
 % \title[short title]{How to Make Pinocchio a Real Boy? Designing conversational architecture elements to achieve desirable anthropomorphized perceptions}
-\title[Bot's Guide to Being Human]{Bot's Guide to Being Human: Investigating the Effect of Conversation Architecture Elements on the Anthropomorphized Perceptions of Conversational Agents}
-% Blurring the line between human and bots
-
+\title[The Bot with the Eloquent Speech]{The Bot with the Eloquent Speech: Exploring the Relationship between Perceptions of Conversational Agents and Their Conversation Architecture}
 
 %%
 %% The "author" command and its associated commands are used to define
@@ -118,7 +116,7 @@
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-The natural language interactions of conversational agents encourage users to attribute humanlike qualities to them, but we don't yet have a systematic understanding on how to design conversation architecture to orchestrate these anthropomorphized perceptions. Through a comprehensive review on papers with empirical studies on the impact of conversation architecture elements on perception of agents, we collected explored connections in literature to create a consistent taxonomy for anthropomorphized perceptions, and conversation architecture elements. Also, we created a generalized framework of the relationship between conversation architecture and perceptions based on the number of impacts found in the reviewed studies. In our analysis, we found there are inconsistencies in the measurements for perceptions of agents, as well as influencing factors other than conversation architecture that could impact anthropomorphized perceptions of agents. Also, it is important to consider ethical aspects of designing anthropomorphized perceptions of CAs as it may have negative consequences to users.
+Previous research has demonstrated a relationship between the structure of conversational agents' natural language interaction and how these agents are perceived by their users. However, the systematic connections between the perception of agents and elements of conversation architecture are not well understood. Furthermore, there is no clear definition of the aspects of perception that are affected and the elements of conversation architecture. In this paper, we present a synthesized framework demonstrating the connections between perceptions of agents and conversation architecture elements, using a taxonomy of eleven perceptions grouped into four categories, and ten elements grouped into three categories. We highlight the need for further research for the perception of agent's ability and perception of social connection with agent's, especially as it relates to the linguistic style of conversational agents.  Also, there is the need to be consistent in the assessment of agents' perceptions, and address ethical concerns in design.
 \end{abstract}
 
 %%
@@ -169,6 +167,20 @@ The natural language interactions of conversational agents encourage users to at
 %% information and builds the first part of the formatted document.
 \maketitle
 %TC:endignore
+
+
+%%%% TODO %%%%
+% Add headmap of explored relationships - side by side with the connections - show numbers - DONE
+% Put the heatmap of impact earlier in the paper - DONE
+% Put the tables together - DONE
+% show what is explored vs. the connections that had impacts. - DONE
+% User perception of agent instead of anthropomorphized perceptions
+% Refer to the explored connection in writing, and connections with impacts
+% Update to use perception aspects and categories (instead of themes and organizing themes)
+% Update introduction
+% Include focus areas for future reasearch
+% Reviewed recording up to 17:31
+% Question about single column vs. double column format - ask Jaisie
 
 \section{Introduction}
 
@@ -252,7 +264,28 @@ For RQ3, we extracted the relationships between perceptions and architecture ele
 
 \section{Findings}
 
+\begin{figure*}[]
+  \centering
+  \includegraphics[width=\textwidth]{fig-heatmap-impact.png}
+  \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element}
+  \label{fig:heatmap-impact}
+\end{figure*}
+
 \subsection{Anthropomorphized Perceptions}
+
+As shown in Table \ref{tab:perceptions}, there are four organizing themes defined for the anthropomorphized perceptions of conversational agents covering 11 basic themes of perception. The details of each theme are discussed below.
+
+\textbf{Perception of interaction with agent} evaluates the overall interaction quality users had with the conversational agent. The three basic themes for this perceptions are usability, engagement and satisfaction. \textit{Usability} measures the utilitarian aspects of the interaction, whether it was accurate, easy to use, efficient or helpful. Some commonly used methods to measure usability include the response accuracy portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, or the NASA Task Load Index (NASA-TLX) \cite{hart1988development}\cmt{nasa} to measure cognitive workload. Questions such as "the system is easy to use" or "it is easy to understand the agent" are also measures of usability. \textit{Engagement} on the other hand measures users' emotional reactions, whether they have enjoyed the conversation with CA, or annoyed or frustrated with the interaction. Some commonly used methods to measure engagement include  the annoyance portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, and the Use Engagement Scale (UES) \cite{o2018practical}\cmt{ues}. Questions such as "I enjoyed using the system" or "I felt frustrated with the agent" are also measures of engagement. Lastly, \textit{Satisfaction} measures users' overall satisfaction interacting with the agent. Questions such as "the overall assessment of conversing with the CA was satisfactory" are used to measure this perception.
+
+\textbf{Perception of agent's ability} evaluates the perceived capabilities of the agent. While there are some elements of system performance in this measure, the main aspect we are interested in is the perception differences for agents with identify system capabilities but with different architecture elements. Specifically, \textit{intelligence} measures the agent's expertise and knowledge, and it is commonly administered through the Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} on the set of questions related to perceived intelligence. Also survey questions such as asking users about the agent's intelligence and domain knowledge are used to measure perceived intelligence. \textit{Competence} takes intelligence one step further by evaluating the agent's ability to put its intelligence into practice. To measure a CA's competence, there are usually surveys or qualitative feedback that the agent is capable and competent, and that the users have confidence in the agent's ability to get the job done. Lastly, \textit{trust} evaluates agent's truthfulness, credibility and benevolence. Some commonly used methods to evaluate trust include the Trust Propensity Scale \cite{mayer1999effect} and the Individualized Trust Scale (ITS) \cite{wheeless1977measurement}. Questions such as "is the agent honest" and "can I trust the agent with sensitive information" are also measures of trust.
+
+\textbf{Perception of the social connection with agent} evaluates the emotional connections that users have with agents. The three basic themes of conversation tone, social presence and intimacy are included in this category. \textit{Conversation tone} measure the affective impression of the agent's tone, such as empathy, expressiveness, or passionate. Also, it measures whether the tone used by the agent is persuasive or appropriate for the conversation. \textit{Social presence} measures the sense of connectness and psychological distance users has with an agent. Some aspects in this measure include a sense of familiarity or similarity with the agent, whether users feel the agent behaves like them or have similar attitudes to them. The measure of \textit{Intimacy} extends social presence into the realm of the quality of relationships with an agent. Some commonly used measures include the set of social attraction questions from the interpersonal attraction questionnaire \cite{mccroskey1975development} and the quality of relationship inventory (QRI) \cite{pierce1997assessing}. These questionnaires include questions like "I think the agent could be a friend of mine", or "I feel we could establish a personal relationship with each other".
+
+\textbf{Perception of agent's humanness} evaluates human-likeness and the anthropomorphized personality traits that users assign to agents. \textit{Human-likeness} measures whether the agent presented itself as natural and human-like, or artificial and machine-like. The Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} set of questions related to anthropomorphism and the Ascent of Man scale \cite{kteily2015ascent} are commonly used methods to assess human-likeness. Survey questions with semantic scales such as "human-like / machine-like" and "artificial / natural" are also used for this perception. \textit{Personality traits} captures the human characteristics that are attributes to the agent, such as warm, friendly, likeable, and polite. This is commonly captured in the qualitative feedback from users, commenting on whether the agent is extroverted or introverted, or the human characteristics they perceive the agent such as funny or witty. Some studies used the measure of the Big-5 personality traits \cite{gosling2003very} to map an agent's disposition on various personality dimensions.
+
+Overall there is good coverage of perception measures based on the list of papers reviewed in our corpus. The most commonly measured perceptions are related to the interaction with agent, followed by the perception of agent's humanness. There are two basic themes that are the least measured compared to the others: competence under the perception of agent's ability, and intimacy under the perception of social connection with agent. This may be due to the controlled lab settings for the experiments, where participants are given the scenarios for interaction. This environment is not conducive to forming relationships with a conversational partner, as noted by Linnerman et al. in their discussions \cite{linnemann2018can}\cmt{[15]}. Also, the same factor could impact the assessment of agent's abilities, as the users may not feel like they have the expertise to assess an agent's competence. These factors could contribute to the reasons why competency and intimacy are not as frequently measured in experimental studies.
+
+% Add citations
 
 \begin{table*}[ht]
 \renewcommand*{\arraystretch}{1.4}
@@ -260,7 +293,7 @@ For RQ3, we extracted the relationships between perceptions and architecture ele
 \begin{tabular}{@{}p{0.17\textwidth} | p{0.12\textwidth} | p{0.20\textwidth} | >{\centering}p{0.09\textwidth} | p{0.42\textwidth} @{}}
 %!{\vrule width 1.2pt} 
 \Xhline{1.2pt}
-\textbf{Category} & \textbf{Theme} & \textbf{Sample Codes} & \textbf{No. Papers} & \textbf{Papers} 
+\multicolumn{2}{l|}{\textbf{Perception Aspects}} & \textbf{Examples} & \textbf{No. Papers} & \textbf{Papers} 
 \\ \Xhline{1.2pt}
 \multirow{3}{*}{\parbox{0.16\textwidth}{Perception of Interaction with Agent}}
     & Usability & accuracy, ease of use, efficiency, helpfulness & 23 
@@ -310,20 +343,6 @@ For RQ3, we extracted the relationships between perceptions and architecture ele
 \label{tab:perceptions}
 \end{table*}
 
-As shown in Table \ref{tab:perceptions}, there are four organizing themes defined for the anthropomorphized perceptions of conversational agents covering 11 basic themes of perception. The details of each theme are discussed below.
-
-\textbf{Perception of interaction with agent} evaluates the overall interaction quality users had with the conversational agent. The three basic themes for this perceptions are usability, engagement and satisfaction. \textit{Usability} measures the utilitarian aspects of the interaction, whether it was accurate, easy to use, efficient or helpful. Some commonly used methods to measure usability include the response accuracy portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, or the NASA Task Load Index (NASA-TLX) \cite{hart1988development}\cmt{nasa} to measure cognitive workload. Questions such as "the system is easy to use" or "it is easy to understand the agent" are also measures of usability. \textit{Engagement} on the other hand measures users' emotional reactions, whether they have enjoyed the conversation with CA, or annoyed or frustrated with the interaction. Some commonly used methods to measure engagement include  the annoyance portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, and the Use Engagement Scale (UES) \cite{o2018practical}\cmt{ues}. Questions such as "I enjoyed using the system" or "I felt frustrated with the agent" are also measures of engagement. Lastly, \textit{Satisfaction} measures users' overall satisfaction interacting with the agent. Questions such as "the overall assessment of conversing with the CA was satisfactory" are used to measure this perception.
-
-\textbf{Perception of agent's ability} evaluates the perceived capabilities of the agent. While there are some elements of system performance in this measure, the main aspect we are interested in is the perception differences for agents with identify system capabilities but with different architecture elements. Specifically, \textit{intelligence} measures the agent's expertise and knowledge, and it is commonly administered through the Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} on the set of questions related to perceived intelligence. Also survey questions such as asking users about the agent's intelligence and domain knowledge are used to measure perceived intelligence. \textit{Competence} takes intelligence one step further by evaluating the agent's ability to put its intelligence into practice. To measure a CA's competence, there are usually surveys or qualitative feedback that the agent is capable and competent, and that the users have confidence in the agent's ability to get the job done. Lastly, \textit{trust} evaluates agent's truthfulness, credibility and benevolence. Some commonly used methods to evaluate trust include the Trust Propensity Scale \cite{mayer1999effect} and the Individualized Trust Scale (ITS) \cite{wheeless1977measurement}. Questions such as "is the agent honest" and "can I trust the agent with sensitive information" are also measures of trust.
-
-\textbf{Perception of the social connection with agent} evaluates the emotional connections that users have with agents. The three basic themes of conversation tone, social presence and intimacy are included in this category. \textit{Conversation tone} measure the affective impression of the agent's tone, such as empathy, expressiveness, or passionate. Also, it measures whether the tone used by the agent is persuasive or appropriate for the conversation. \textit{Social presence} measures the sense of connectness and psychological distance users has with an agent. Some aspects in this measure include a sense of familiarity or similarity with the agent, whether users feel the agent behaves like them or have similar attitudes to them. The measure of \textit{Intimacy} extends social presence into the realm of the quality of relationships with an agent. Some commonly used measures include the set of social attraction questions from the interpersonal attraction questionnaire \cite{mccroskey1975development} and the quality of relationship inventory (QRI) \cite{pierce1997assessing}. These questionnaires include questions like "I think the agent could be a friend of mine", or "I feel we could establish a personal relationship with each other".
-
-\textbf{Perception of agent's humanness} evaluates human-likeness and the anthropomorphized personality traits that users assign to agents. \textit{Human-likeness} measures whether the agent presented itself as natural and human-like, or artificial and machine-like. The Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} set of questions related to anthropomorphism and the Ascent of Man scale \cite{kteily2015ascent} are commonly used methods to assess human-likeness. Survey questions with semantic scales such as "human-like / machine-like" and "artificial / natural" are also used for this perception. \textit{Personality traits} captures the human characteristics that are attributes to the agent, such as warm, friendly, likeable, and polite. This is commonly captured in the qualitative feedback from users, commenting on whether the agent is extroverted or introverted, or the human characteristics they perceive the agent such as funny or witty. Some studies used the measure of the Big-5 personality traits \cite{gosling2003very} to map an agent's disposition on various personality dimensions.
-
-Overall there is good coverage of perception measures based on the list of papers reviewed in our corpus. The most commonly measured perceptions are related to the interaction with agent, followed by the perception of agent's humanness. There are two basic themes that are the least measured compared to the others: competence under the perception of agent's ability, and intimacy under the perception of social connection with agent. This may be due to the controlled lab settings for the experiments, where participants are given the scenarios for interaction. This environment is not conducive to forming relationships with a conversational partner, as noted by Linnerman et al. in their discussions \cite{linnemann2018can}\cmt{[15]}. Also, the same factor could impact the assessment of agent's abilities, as the users may not feel like they have the expertise to assess an agent's competence. These factors could contribute to the reasons why competency and intimacy are not as frequently measured in experimental studies.
-
-% Add citations
-
 \subsection{Conversation Architecture Elements}
 
 As shown in Table \ref{tab:cues}, there are three categories defined for the conversation architecture elements covering 10 different themes. The details of each category and theme are discussed below.
@@ -342,7 +361,7 @@ Overall the spread of conversation architecture elements relevant to anthropomor
 \renewcommand*{\arraystretch}{1.4}
 \begin{tabular}{@{}p{0.17\textwidth} | p{0.14\textwidth} | p{0.25\textwidth} | >{\centering}p{0.09\textwidth} | p{0.34\textwidth} @{}}
 \Xhline{1.2pt}
-\textbf{Category} & \textbf{Theme} & \textbf{Sample Codes} & \textbf{No. Papers} & \textbf{Papers}
+\textbf{Element Category} & \textbf{Element} & \textbf{Examples} & \textbf{No. Papers} & \textbf{Papers}
 \\ \Xhline{1.2pt}
 \multirow{4}{*}{Linguistic Content}    & Affective Language & emotional expressions, sentiment-adaptive responses & 11
 & \cite{daher2020empathic}\cmt{[58]}\cite{diederich2019emulating}\cmt{[25]}\cite{healey2013relating}\cmt{[39]}\cite{hu2022polite}\cmt{[76]}\cite{lee2019s}\cmt{[55]}\cite{lubis2019positive}\cmt{[43]}\cite{moilanen2022measuring}\cmt{[82]}\cite{seeger2021chatbots}\cmt{[35]}\cite{volkel2022user}\cmt{[75]}\cite{yang2017perceived}\cmt{[44]}\cite{zhu2022effects}\cmt{[26]}
@@ -380,14 +399,7 @@ Overall the spread of conversation architecture elements relevant to anthropomor
 \label{tab:cues}
 \end{table*}
 
-\subsection{Relationship Between Anthropomorphized Perceptions and Conversation Architecture Elements}
-
-\begin{figure*}[]
-  \centering
-  \includegraphics[width=\textwidth]{fig-heatmap-impact.png}
-  \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element}
-  \label{fig:heatmap-impact}
-\end{figure*}
+\subsection{Relationship Between Perceptions of Agents and Conversation Architecture}
 
 We extracted 265 connections between anthropomorphized perceptions and conversation architecture elements from our reviewed corpus. Out of these connections, 193 of them had an impacted relationship between the conversational architecture elements and anthropomorphized perceptions. Most of these relationships (n=183) were exploring the effect of a single conversation architecture element on perceptions of agents (e.g. \cite{miehle2018exploring}\cmt{[51]}\cite{westerman2019believe}\cmt{[9]}), while a few of them (n=10) used a composite of architecture elements in the study (e.g. \cite{seeger2021chatbots}\cmt{[35]}\cite{volkel2021manipulating}\cmt{[68]}). The 183 single element relationships are visualized into a heatmap (Figure \ref{fig:heatmap-impact}) to based on the number of impacts conversational architecture elements had on the anthropomorphized perceptions. These relationships are discussed in details in the following sections for each perception category.
 
@@ -397,7 +409,6 @@ We extracted 265 connections between anthropomorphized perceptions and conversat
  
 %This is especially evident in the perception of social connection with agent and perception of agent's humanness. For the perception of social connection with a CA, there are only 19 perceptions measured for text-based agents, while there are 35 perceptions measured for voice-based agents. Similarly for perception of agent's humanness, there are 36 perceptions measured for text-based agents, as compared to 52 perceptions of voice-based agents. This highlights that there is a ..
 
-
 \subsubsection{Perception of Interaction with Agent}
 
 The effects of conversation architecture elements on the perception of interaction with agent is the most explored connections in the corpus (n=100). Out of these explored connections, the majority of them (n=69) discovered an impact between the studied architecture element and the perception. For the impacted relationships, the corpus had similar numbers of connections across voice-based (n=34) and text-based (n=35) CAs.
@@ -405,6 +416,13 @@ The effects of conversation architecture elements on the perception of interacti
 Across the themes in this perception category, both \textbf{usability} and \textbf{engagement} perceptions were measured frequently in our corpus, with conversation architecture elements having effects on these measures across linguistic content, linguistic style and non-linguistic format categories. \textbf{Satisfaction} measures were used in some studies but it is not evaluated as often as engagement or usability. Several papers that measured satisfactions were conversation agents within the transaction context, especially within the customer service domain (e.g. \cite{diederich2019emulating}\cmt{[25]}\cite{elsholz2019exploring}\cmt{[61]}\cite{gnewuch2018faster}\cmt{[19]}). For the relationships across conversation architecture element categories, linguistic style has the higher number of relationships with perceptions of interaction (n=31). Linguistic content (n=17) and non-linguistic format (n=18) had similar number of relationships.
 
 There are a few conversation architecture elements that are notable to the perception of interaction with agent. First are the linguistic styles of formality and elaborateness, where they have high impacts across usability, engagement and satisfaction perceptions. For \textbf{formality}, various studies reported significant differences between using casual vs. formal styles. Some participants enjoyed the friendly nature of the casual style of the conversation \cite{cox2022does}\cmt{[27]}, while in another study participants reported the formal language style as boring \cite{kim2019comparing}\cmt{[89]}. For \textbf{elaborateness}, participants generally found the use of full sentences more useful than keyword only \cite{haas2022keep}\cmt{[78]}\cite{roy2021users}\cmt{[71]}. Otherwise, the impact of an agent's elaborateness on user's perception of interaction depends on the user's preference \cite{miehle2018exploring}\cmt{[51]}, as well as the topic of discussion \cite{haas2022keep}\cmt{[78]}. Within the linguistic content category, \textbf{social talk} and \textbf{humour} conversation architecture elements had impacts on user's perception of the interaction with an agent. There may be some opposing effects between different perceptions of interaction, as users enjoyed conversing with CAs using social talk more \cite{lee2020hear}\cmt{[23]}\cite{roy2021users}\cmt{[71]}, but the tradeoff is that they perceive it as less efficient \cite{roy2021users}\cmt{[71]}. Lastly, majority of the studies found that non-linguistic formats of a CA impacts the perception of the interaction, as \textbf{prosodic cues} such as expressiveness increased participants' engagement ratings \cite{zhu2022effects}\cmt{[26]}, and text variations such as using response delay increased user's satisfaction with the chatbot interaction \cite{gnewuch2018faster}\cmt{[19]}.
+
+\begin{figure*}[]
+  \centering
+  \includegraphics[width=\textwidth]{fig-heatmap-coverage.png}
+  \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element}
+  \label{fig:heatmap-coverage}
+\end{figure*}
 
 \subsubsection{Perception of Agent's Ability}
 
