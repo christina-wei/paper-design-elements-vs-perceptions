@@ -1,7 +1,7 @@
 %% Manuscript for the effect of designed conversational architecture on the perception of agents
 %%
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[sigconf,screen,review, anonymous]{acmart}
+\documentclass[sigconf,screen,review, anonymous]{config/acmart}
 
 \usepackage[linewidth=1pt]{mdframed}
 \usepackage{lipsum}
@@ -89,11 +89,10 @@
 }
 
 \author{Young-Ho Kim}
-\email{ygho.kim@navercorp.com}
+\email{yghokim@younghokim.net}
 \affiliation{%
-  \institution{Naver Corporation}
-  \city{Seoul}
-  \country{Korea}
+  \institution{NAVER AI Lab}
+  \country{Republic of Korea}
 }
 
 \author{Anastasia Kuzminykh}
@@ -170,358 +169,12 @@ Conversational agents mimic natural conversation to interact with users. Since t
 \maketitle
 %TC:endignore
 
-
-\section{Introduction}
-
-Conversational agents (CAs), such as Amazon Alexa or Google Assistant, are designed to interact with humans using natural language through voice or text modalities. Since these agents interact with users using natural language, conversation architecture — which refers to what a CA says and how it says it — affects how these agents interact with users. The effectiveness of these interactions with CAs are strongly dependent on users' perceptions of agents \cite{knijnenburg2016inferring}\cite{seeger2021chatbots}. According to previous research, there is a correlation between CAs' conversation architecture and users' perception of these agents.
-
-While there are various studies on how different conversation architecture elements affects agents' perceptions, there is a paucity of knowledge on the overall coverage and effects of these relationships explored in literature. For conversation architecture elements, The use of affective language is commonly explored, with studies finding that conversational agents are perceived as more socially present and emotionally intelligent if they use sentiment-adaptive response based on user's utterances \cite{diederich2019emulating}\cite{yang2017perceived}. Another commonly explored element is the use of prosody in voice-based agents, such as the use of express prosody contributing to higher perceived enjoyment and intimacy with the agent \cite{kim2020can}. However, there is a lack of research to synthesize these findings into an overall framework. One of the possible issues is the lack of clear and consistent definitions on the aspects of user's perceptions of agent and conversation architectural elements.
-
-Currently there is no systematic understanding on the elements of conversation architecture that are relevant to perceptions of agents. Some papers have started to examine the speech specifics that are being explored in literature, such as Clark et al. \cite{clark2019state} capturing different elements of system speech production for voice-based agents and categorizing them based on content, style, and other topics. There are also some investigations of conversation architecture elements within the broader field of studying cues that trigger a social reaction of the user towards the CA. Feine et al's \cite{feine2019taxonomy} paper laid the foundation to create a consistent taxonomy for these social cues. However, there is no comprehensive research specifically for conversation architecture elements that are relevant to user perceptions. 
-
-Related to user perceptions, there is also no systematic understanding on the perceptions of agents affected by speech variations. Some research discussed the perceptions of agents as part of the broader scope of user experiences of CAs. These publications have gathered UX dimensions used to evaluate conversational agents, which include the perceptions of agents (e.g. empathy, humanness) alongside other assessments (e.g. physiological data) \cite{clark2019state}\cite{finch2020towards}. Some even categorized the metrics based on the type of method used, including technical measures like system error rate and perception measures like perceived social presence \cite{zheng2022ux}. However, these studies are assessing the general field of UX measurements and not specifically on the perceptions of agents, and do not analyze the effects of conversation architecture on these perceptions.
-
-These research gaps discussed above: the paucity of knowledge on synthesizing the effect of speech specifics on perceptions of CAs as well as the lack of systematic understanding on the elements of conversation architecture and perceptions of agents motivated us to the goal of how to design conversation architecture in order to orchestrate perceptions of conversational agents. First, we want to understand \textbf{(RQ1) what perception aspects of agents are being explored in relation to the effects of conversation architecture elements}. While there are various architecture elements of conversation architecture used in a CA's utterances, we don't have a holistic understanding of them. This leads to our second research question: \textbf{(RQ2) what elements of conversation architecture are relevant to the perceptions of agents?} Lastly, we want to understand the effect of conversation architecture on perceptions of agent, specifically: \textbf{(RQ3) what are the relationships between conversation architecture elements and the perceptions of CAs?}
-
-To answer these questions, we performed a comprehensive review on existing literature from 2010 to 2022 and synthesized the effect of conversation architecture elements on the perceptions of CAs based on 57 relevant papers (Figure \ref{fig:heatmap-impact}). We also grouped the perceptions of agents affected by conversation architecture into four categories and eleven aspects (Table \ref{tab:perceptions}), and grouped the speech variations related to perceptions of agents into four categories and eleven elements (Table \ref{tab:cues}). %Lastly, we coded the explored connections between conversation architecture and perceptions and synthesized their relationships into a framework. Through our analysis, we also found that there are inconsistencies in the assessment of perceptions across studies, as well as influencing factors other than conversation architecture that impact the perceptions of agents. 
-This work contributes to the HCI community by presenting a framework that demonstrates the effect of conversation architecture on perceptions of conversational agents, as well as taxonomies for perception aspects and conversation architecture elements providing clear and consistent terms that can be used in future research. Together, these contributions move us one step closer to designing CAs that effectively interact with users. 
-%Also, our analysis extends existing reviews on UX research of CAs \cite{clark2019state}\cite{rapp2021human}\cite{zheng2022ux} by providing a synthesized framework outlining the relationships between conversation architecture and perceptions of agents. With the help of this framework, we are taking the first step to understand how to design conversational agents to solicit specific social reactions from users.
-
-In the remainder of the paper, we first outline related background work, our literature review process, as well as the characteristics of the papers in our reviewed corpus. Following that, we describe in detail the taxonomy for the perception of agents, the taxonomy for conversation architecture element, as well as the framework on the relationships between perceptions of agents and conversation architecture. Finally, we discuss research challenges and opportunities as well as ethical considerations for designing conversational architecture to orchestrate perceptions of conversational agents.
-
-
-\section{Related Work}
-
-Communication with conversational agents is similar to communicating with humans as they both use natural languages for the interaction. While it is tempting to leverage components from human-human conversation in designing interactions with conversational agents, studies have demonstrated that there are differences between human-human communications and human-agent communications. Currently people consider CAs as a user-controlled tool rather than a social companion, with focuses on the utilitarian aspects of the conversation \cite{clark2019makes}\cmt{[1]}. When conversing with conversational agents, users tend to use shorter messages with limited vocabulary, adapting to the style of the agent \cite{hill2015real}. Also, some studies found that small talk and humour are considered unnecessary or even inauthentic in conversations with CAs, while these elements are important in scaffolding communications with human partners \cite{clark2019makes}\cmt{[1]}\cite{doyle2019mapping}\cmt{[2]}. There are also machine-like traits that users preferred in a CA, such as the ability to interact through multimodal media, and a machine's perceived ability to be objective and non-judgemental \cite{doyle2019mapping}\cmt{[2]}\cite{kim2022understanding}\cmt{[3]}. Given human-agent communications are different from human-human communications, it is important to look specifically at the design of user experiences for conversational agents.
-
-There have been numerous studies on the user experiences for conversational agents, and some attempts to synthesize findings across literature. Several papers have mapped out the current state of research for conversational agents for specific agent types (e.g. text-based, voice-based, polyadic) highlighting major trends, topics, methods and evaluating metrics \cite{clark2019state}\cmt{[33]}\cite{rapp2021human}\cmt{[5]}\cite{zheng2022ux}. Other papers looked at specific dimensions of user experiences or domains of usage, such as Van Pinxteren et al. \cite{van2020human} examining the effects of agents' human-like communicative behaviours on their relationships with users, and Kocaballi et al. \cite{kocaballi2022design} exploring the challenges and opportunities of CAs in healthcare. There are also publications aimed to unify concepts used in the research for CA user experiences, for instance Feine et al. \cite{feine2019taxonomy} creating a taxonomy of social cues, and Finch et al. \cite{finch2020towards} analyzing evaluation protocols for dialogue systems. To the best of our knowledge, there is currently no synthesis on the speech specifics of CAs, the perceptions of agents, or the relationship between them.
-
-Conversation architecture has been demonstrated to play an important role in users' perceptions of agents \cite{knijnenburg2016inferring}\cite{moussawi2021perceptions}\cite{seeger2021chatbots}\cmt{[35]}. Yet, little is known about the overall landscape on the how the specifics of speech variations affect these perceptions. Given the paucity of research in this area, this paper aims to synthesize the identified relationships between conversation architecture elements and users' perceptions of agents.
-
-%Other papers categorized CA assessments into themes. For example, Rapp et al. \cite{rapp2021human} generated themes related to how users' experience with chatbots such as experiencing the chatbot including assessments on expectation, perception, satisfaction etc.  Most recently, Zheng et al's literature review on the UX research of CAs \cite{zheng2022ux} categorized the metrics based on the type of method used, including technical measures like system error rate and perception measures like perceived social presence. However, existing studies use different terminologies and categories across aspects of perception. As an illustration, it is unclear if the theme of experiencing the chatbot from Rapp et al. \cite{rapp2021human} contains similar aspects to the perception towards CA in Zheng et al \cite{zheng2022ux}'s analysis.
-%\cite{finch2020towards} Towards unified dialogue system evaluation: A comprehensive analysis of current evaluation protocols
-
-%Anthropomorphism is defined as the attribution of traits that we typically associate with being distinctly human to nonhuman entities \cite{waytz2010sees}. For example, users tend to personify conversational agents like Amazon Alexa by using person pronouns instead of object pronouns in online reviews \cite{purington2017alexa}.  Research shows that anthropomorphic design is beneficial to establishing and maintaining trust between users and conversational agents \cite{seeger2021chatbots}. Also, speakers tend to align their lexical choices with conversational agents, similar to human-human conversations \cite{cowan2015does}. Anthropomorphism has been shown to ease user interactions, e.g. making agents more approachable, engaging, and trustworthy when they exhibit human characteristics \cite{qiu2009evaluating}. These processes are of particular interest for human-agent communication because they form the basis for user expectations and predispositions regarding agents' behavior, reliability of the information, etc. \cite{kuzminykh2020genie}.
-
-\section{Methods}
-
-This section describes the research methodologies used for data collection and data analysis. Additionally, it presents the characteristics of the papers in our reviewed corpus.
-
-\subsection{Data Collection}
-
-Following PRISMA guidelines \cite{prisma}, we reviewed and selected literature exploring the relationship between the specifics of conversation architecture elements and perceptions of CAs. Searches were carried out in the ACM Digital Library between January 1 and January 15, 2023. Through our analysis, we didn't find any common terms used to refer to either conversation architecture elements, or aspects of perceptions. As such, we generalized our search term to capture articles related to conversational agents. Based on search terms used in previously published literature reviews \cite{clark2019state}\cite{rapp2021human}, the following keywords are used to search for publications related to conversational user interfaces:
-\newline
-
-\textit{"conversational agent" OR "natural language interface" OR "IPA" OR "intelligent personal assistant" OR "chatbot" OR "speech interface" OR "voice assistant" OR "intelligent agent" OR "human-chatbot communication" OR "virtual agent" OR "dialog* system" OR "voice user interface" OR "human computer dialog*"}
-\newline
-
-The following selection criteria are applied to identify literature related to the effect of conversational architecture on the perception of agents:
-\begin{itemize}
-  \item The paper was published between 2010 and 2022.
-  \item The paper is peer-reviewed and written in English.
-  \item The paper contains the use of voice-based or text-based conversational agents.
-  \item The paper contains studies on the impact of conversation architecture elements on the perceptions of agents.
-  \item The paper contains impact of conversation architecture elements can be separated from other effects (e.g. embodiment).
-
-\end{itemize}
-
-The initial query retrieved 2901 unique publications. We screened the titles and abstracts of the papers based on the selection criteria above, resulting in 221 papers. The fully body of these papers are then reviewed, selecting papers that met the criteria. A search for additional literature was also performed to supplement the corpus, adding 8 more papers to the selection. In total, we identified 57 relevant articles for analysis (see Figure \ref{fig:prisma}).
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=1\columnwidth]{fig-prisma.png}
-  \caption{Literature search using PRISMA guidelines}
-  \label{fig:prisma}
-\end{figure}
-
-\subsubsection*{Literature Corpus Characteristics}
-
-The papers reviewed (n=57) were published between May 2011 and November 2022. More than 75\% of the papers were published in or after 2019, with a slight trend upwards over the years (see Figure \ref{fig:paper}). The vast majority of the papers in our corpus were published in conference proceedings (n=50), with the remainder papers published in journals. Out of the papers published in conferences, the top conferences were The ACM Conference on Human Factors in Computing Systems\footnote{https://dl.acm.org/conference/chi} (n=16), Conversational User Interfaces\footnote{https://dl.acm.org/conference/cui} (n=7), Human-Agent Interaction\footnote{https://dl.acm.org/conference/hai} (n=4), and Intelligent Virtual Agents\footnote{https://dl.acm.org/conference/iva} (n=4). 
-%Out of the papers published in journals, some venues include the International Journal of Human-Computer Interaction\footnote{https://www.tandfonline.com/journals/hihc20} (n=2) and Interacting with Computers\footnote{https://academic.oup.com/iwc} (n=1).
-
-On the modality characteristics of the conversational agents in the corpus, there is a roughly even split between the modalities, with slightly more papers exploring voice-based CAs (n=30) compared to text-based CAs (n=27).
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\columnwidth]{fig-paper.png}
-  \caption{Number of papers by year}
-  \label{fig:paper}
-\end{figure}
-
-\subsection{Data Analysis}
-
-\subsubsection*{Perceptions of Agents} To understand the perceptions of agents related to conversation architecture (RQ1), assessments for the perceptions of agents were extracted from each paper. We used inductive thematic analysis to group these assessments into codes based on their meanings. For example, the code likeability of the agent contains the questionnaire item "this voice agent was likeable" used by \cite{cuadra2021my}\cmt{[67]}, Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed}'s set of questions on likeability used by \cite{linnemann2018can}\cmt{[15]}, and Subjective Assessment of Speech System Interface (SASSI) questionnaire \cite{hone2000towards}\cmt{sassi}'s set of questions on likeability used by \cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}. This step resulted in 83 unique codes. These codes are then organized based similarity of the meanings, resulting in 11 aspects of perceptions. For example, the aspect of personality traits of the agent contains measurements such as likeability, funniness, and kindness. Lastly, the 11 aspects are grouped into 4 categories: perception of interaction with agent, perception of agent's ability, perception of sociability with agent, and perception of agent's humanness (Table \ref{tab:perceptions}).
-
-\subsubsection*{Conversation Architecture Elements}
-As to the elements of conversation architecture that are relevant to the perception of agents (RQ2), we extracted the specifics of conversation architecture used in each paper. Some of the papers used multiple features in their CA design, such as the the anthropomorphic agent used in Seeger et al's study \cite{seeger2021chatbots}\cmt{[35]}. In these composite situations, we broke them down into their individual features. For example, the anthropomorphic agent \cite{seeger2021chatbots}\cmt{[35]} was separated into emotional expressions, is-typing indicator, emoticons, and response delay and captured as codes. 58 unique codes were created as part of this process, capturing features like sentiment-adaptive responses \cite{diederich2019emulating}\cmt{[25]}, lexical alignment \cite{spillner2021talk}\cmt{[18]}, and typos \cite{westerman2019believe}\cmt{[9]}. We then organized these codes into elements based on similarity, resulting in 12 elements of conversation architecture. For example, the element of disfluency contains fillers \cite{jeong2019exploring}\cmt{[10]}\cite{wester2015artificial}\cmt{[14]}, interjections \cite{ceha2022expressive}\cmt{[77]}\cite{hu2021enhancing}\cmt{[56]}, repetitions \cite{yang2021effect}\cmt{[72]} and typos \cite{westerman2019believe}\cmt{[9]}. These elements are grouped into 4 categories: dialog strategy, content affectiveness, content style, and speech format (Table \ref{tab:cues}).
-
-\subsubsection*{Relationship Between Perceptions of Agents and Conversation Architecture}
-To study the effect of conversation architecture on users' perceptions (RQ3), we extracted the connections explored in each paper, using the perception aspects and conversation architecture elements developed in the previous data analysis steps. Each connection's effect was also recorded based on whether an association was found in the study and the nature of that association. Out of our review corpus, 265 connections between perceptions of agents and conversation architecture were explored in literature. To analyze the specifics of conversation architecture that affect the perceptions of CAs, 72 connections that did not result in observed relationships were discarded, resulting in 193 relationships for analysis. For example, the connection between the matching style of a CA and user satisfaction was removed because Hoegen et al. \cite{hoegen2019end}\cmt{[31]} did not find a significant difference between the style matching agent and the non-style matching agent for overall interaction satisfaction. Out of the 193 relationships, 10 were relationships based on agents modifying multiple architecture elements (e.g. \cite{seeger2021chatbots}\cmt{[35]}\cite{volkel2021manipulating}\cmt{[68]}). They were not included in the final framework as we could not attribute the perceptions of agents to the underlying core elements. Overall, 183 relationships between individual architecture elements and perceptions of agents are incorporated into our synthesized framework, visualized as a heatmap to demonstrate their relationships with each other (Figure \ref{fig:heatmap-impact}).
-
-\section{Findings}
-
-\begin{figure*}[]
-  \centering
-  \includegraphics[width=\textwidth]{fig-heatmap-impact.png}
-  \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element}
-  \label{fig:heatmap-impact}
-\end{figure*}
-
-\subsection{Perceptions of Agents}
-
-As shown in Table \ref{tab:perceptions}, there are four categories defined for the perceptions of conversational agents covering 11 different aspects of perception. The details of each category and aspect are discussed below.
-
-\textbf{Perception of interaction with agent} assesses the overall interaction quality users had with the conversational agent. The three aspects for this perceptions are usability, engagement and satisfaction. \textit{Usability} captures the utilitarian component of the interaction, whether it was accurate, easy to use, efficient or helpful. Some commonly used methods to evaluate usability include the response accuracy portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, or the NASA Task Load Index (NASA-TLX) \cite{hart1988development}\cmt{nasa} for cognitive workload. Questions such as "the system is easy to use" or "it is easy to understand the agent" are also used to evaluate usability. \textit{Engagement} on the other hand captures users' emotional reactions to the CA, whether they have enjoyed the conversation, or annoyed or frustrated with the interaction. Some commonly used methods to evaluate engagement include the annoyance portion of the SASSI questionnaire \cite{hone2000towards}\cmt{sassi}, and the Use Engagement Scale (UES) \cite{o2018practical}\cmt{ues}. Questions such as "I enjoyed using the system" or "I felt frustrated with the agent" are also used to evaluate engagement. Lastly, \textit{Satisfaction} captures users' overall satisfaction interacting with the agent. Questions such as "the overall assessment of conversing with the CA was satisfactory" are used to evaluate this perception.
-
-\textbf{Perception of agent's ability} assesses the perceived capabilities of the agent. Unlike system capabilities that affect agent's performance, the perceived ability category captures perceptions of agents with equivalent system capabilities but varied conversation architecture elements. Specifically, \textit{intelligence} captures the agent's expertise and knowledge, and it is commonly administered through the Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} using the set of questions related to perceived intelligence. Also survey questions such as asking users about the agent's intelligence and domain knowledge are used to evaluate perceived intelligence. \textit{Competence} takes intelligence one step further by examining the agent's ability to put its intelligence into practice. Surveys or qualitative feedback are usually used to assess if the agent is capable and competent, and whether users have confidence in the agent's ability to get the job done. Lastly, \textit{credibility} captures agent's truthfulness, benevolence, and user's confidence in CAs. Some commonly used methods to evaluate trust include the Trust Propensity Scale \cite{mayer1999effect} and the Individualized Trust Scale (ITS) \cite{wheeless1977measurement}. Questions such as "is the agent honest" and "can I trust the agent with sensitive information" are also used to evaluate trust.
-
-\textbf{Perception of the sociability with agent} assesses the emotional connections that users have with agents. This category includes perception aspects of conversation tone, social presence and intimacy. \textit{Conversation tone} captures the affective impression of the agent's tone, such as empathy and expressiveness. Also, this aspect includes whether the tone used by the agent was perceived as friendly, polite or warm. \textit{Social presence} captures the sense of connectness and psychological distance users have with an agent. Some aspects in this category include the sense of familiarity or similarity with the agent, and whether users feel the agent behaves like them or have similar attitudes to them. The category of \textit{Intimacy} extends social presence into the realm of the quality of relationships with an agent. Some commonly used methods to assess intimacy include the set of social attraction questions from the interpersonal attraction questionnaire \cite{mccroskey1975development} and the quality of relationship inventory (QRI) \cite{pierce1997assessing}. These questionnaires include questions like "I think the agent could be a friend of mine", or "I feel we could establish a personal relationship with each other".
-
-\textbf{Perception of agent's humanness} assesses the specifics of anthropomorphized perceptions of conversational agents. \textit{Human-likeness} captures whether the agent presented itself as natural and human-like, or artificial and machine-like. The Godspeed questionnaire \cite{bartneck2009measurement}\cmt{godspeed} set of questions related to anthropomorphism and the Ascent of Man scale \cite{kteily2015ascent} are commonly used methods to evaluate human-likeness. Survey questions with semantic scales such as "human-like / machine-like" and "artificial / natural" are also commonly used for this aspect of perception. \textit{Personality traits} captures the human characteristics that are attributes to the agent. This is commonly collected as qualitative feedback from users, commenting on whether the agent is extroverted or introverted, or the perceived personality such as likeable, funny or witty. Sometimes the Big-5 personality traits questionnaire \cite{gosling2003very} is used to map an agent's disposition on various personality dimensions.
-
-Overall there is a good coverage of different aspects of perception based on the list of papers reviewed in our corpus. The most commonly explored aspect categories is the perception the interaction with agent, followed by the perception of agent's humanness. There are two aspects that are the least explored compared to the others relationships: competence within the perception of agent's ability, and intimacy within the perception of social connection with agent. This may be due to the controlled lab settings for the experiments, where participants are given the scenarios for interaction. This type of environment is not conducive to forming relationships with a conversational partner, as noted by Linnerman et al. in their discussions \cite{linnemann2018can}\cmt{[15]}. The same factor could impact the assessment of agent's competence, as the users may not feel like they have the expertise to assess their perceptions. 
-%These factors could contribute to the reasons why competency and intimacy are not as frequently measured in experimental studies.
-
-\begin{table*}[ht]
-\renewcommand*{\arraystretch}{1.4}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}p{0.17\textwidth} | p{0.12\textwidth} | p{0.20\textwidth} | >{\centering}p{0.09\textwidth} | p{0.42\textwidth} @{}}
-%!{\vrule width 1.2pt} 
-\Xhline{1.2pt}
-\multicolumn{2}{l|}{\textbf{Perception Aspects}} & \textbf{Examples} & \textbf{No. Papers} & \textbf{Papers} 
-\\ \Xhline{1.2pt}
-\multirow{3}{*}{\parbox{0.17\textwidth}{Perception of \newline Interaction with Agent}}
-    & Usability & accuracy, ease of use, \newline efficiency, helpfulness & 23 
-    & \cite{ashktorab2019resilient}\cmt{[88]}\cite{ceha2022expressive}\cmt{[77]}\cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}\cite{cuadra2021my}\cmt{[67]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{elsholz2019exploring}\cmt{[61]}\cite{haas2022keep}\cmt{[78]}\cite{habler2019effects}\cmt{[63]}\cite{healey2013relating}\cmt{[39]}\cite{hu2022polite}\cmt{[76]}\cite{huiyang2022improving}\cmt{[17]}\cite{jestin2022effects}\cmt{[81]}\cite{kim2019comparing}\cmt{[89]}\cite{kim2020can}\cmt{[24]}
-    \cite{kraus2020effects}\cmt{[64]}\cite{linnemann2018can}\cmt{[15]}\cite{ma2022ask}\cmt{[29]}\cite{miehle2018exploring}\cmt{[51]}\cite{misu2011toward}\cmt{[83]}\cite{roy2021users}\cmt{[71]}\cite{spillner2021talk}\cmt{[18]}\cite{wilhelm2022keep}\cmt{[28]}
-\\ \cline{2-5}
-    & Engagement & enjoyment, annoyance, \newline desirable, intention to use  & 28
-    & \cite{andrews2012system}\cmt{[38]}\cite{ceha2022expressive}\cmt{[77]}\cite{ceha2021can}\cmt{[57]}\cite{chan2021kinvoices}\cmt{[74]}\cite{cox2022does}\cmt{[27]}\cite{cuadra2021my}\cmt{[67]}\cite{elsholz2019exploring}\cmt{[61]}\cite{fadhil2018effect}\cmt{[52]}\cite{gnewuch2022opposing}\cmt{[20]}\cite{go2021conversational}\cmt{[80]}\cite{healey2013relating}\cmt{[39]}\cite{huiyang2022improving}\cmt{[17]}\cite{jestin2022effects}\cmt{[81]}\cite{kim2020can}\cmt{[24]}\cite{kim2019comparing}\cmt{[89]}
-    \cite{lee2020hear}\cmt{[23]}\cite{linnemann2018can}\cmt{[15]}\cite{ma2022ask}\cmt{[29]}\cite{miehle2018exploring}\cmt{[51]}\cite{miyamoto2017improving}\cmt{[46]}\cite{moilanen2022measuring}\cmt{[82]}\cite{roy2021users}\cmt{[71]}\cite{spillner2021talk}\cmt{[18]}\cite{volkel2021examining}\cmt{[69]}\cite{volkel2022user}\cmt{[75]}\cite{xiao2021let}\cmt{[73]}\cite{yang2021effect}\cmt{[72]}\cite{zhu2022effects}\cmt{[26]}    
-\\ \cline{2-5}
-    & Satisfaction & service satisfaction, quality of interaction & 12
-    & \cite{ceha2022expressive}\cmt{[77]}\cite{choi2020nobody}\cmt{[54]}\cite{diederich2019emulating}\cmt{[25]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{gnewuch2018faster}\cmt{[19]}\cite{hoegen2019end}\cmt{[31]}\cite{hu2022polite}\cmt{[76]}\cite{ma2022ask}\cmt{[29]}\cite{roy2021users}\cmt{[71]}\cite{wilhelm2022keep}\cmt{[28]}\cite{yang2017perceived}\cmt{[44]}
-\\ \Xhline{1.2pt} 
-\multirow{3}{*}{\parbox{0.16\textwidth}{Perception of Agent's Ability}}
-    & Intelligence & knowledgeable, intelligent, expertise & 11
-    & \cite{ashktorab2019resilient}\cmt{[88]}\cite{ceha2021can}\cmt{[57]}\cite{chan2021kinvoices}\cmt{[74]}\cite{cuadra2021my}\cmt{[67]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{feijoo2021effects}\cmt{[70]}\cite{hu2021enhancing}\cmt{[56]}\cite{jeong2019exploring}\cmt{[10]}\cite{spillner2021talk}\cmt{[18]}\cite{volkel2022user}\cmt{[75]}\cite{yang2017perceived}\cmt{[44]} 
-\\ \cline{2-5}
-    & Competence & competent, appropriate & 6 
-    & \cite{cox2022does}\cmt{[27]}\cite{kraus2020effects}\cmt{[64]}\cite{jestin2022effects}\cmt{[81]}\cite{lee2019s}\cmt{[55]}\cite{misu2011toward}\cmt{[83]}\cite{westerman2019believe}\cmt{[9]}
-\\ \cline{2-5}
-    & Trust & credibility, trustworthy, truthfulness, confidence & 15
-    & \cite{andrews2012system}\cmt{[38]}\cite{chan2021kinvoices}\cmt{[74]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{fadhil2018effect}\cmt{[52]}\cite{healey2013relating}\cmt{[39]}\cite{hoegen2019end}\cmt{[31]}\cite{huiyang2022improving}\cmt{[17]}\cite{jestin2022effects}\cmt{[81]}\cite{kraus2020effects}\cmt{[64]}\cite{lee2020hear}\cmt{[23]}\cite{linnemann2018can}\cmt{[15]}\cite{ma2022ask}\cmt{[29]}\cite{seeger2021chatbots}\cmt{[35]}\cite{tolmeijer2021female}\cmt{[62]}\cite{wilhelm2022keep}\cmt{[28]}    
-\\ \Xhline{1.2pt} 
-\multirow{3}{*}{\parbox{0.16\textwidth}{Perception of \newline Sociability with Agent}}
-    & Conversation Tone & friendly, warm, empathetic, persuasive & 20 
-    & \cite{ashktorab2019resilient}\cmt{[88]}\cite{chan2021kinvoices}\cmt{[74]}\cite{cox2022does}\cmt{[27]}\cite{cuadra2021my}\cmt{[67]}\cite{daher2020empathic}\cmt{[58]}\cite{diederich2019emulating}\cmt{[25]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{healey2013relating}\cmt{[39]}\cite{hu2021enhancing}\cmt{[56]}\cite{hu2022polite}\cmt{[76]}\cite{jestin2022effects}\cmt{[81]}\cite{khooshabeh2011does}\cmt{[37]}\cite{kim2019comparing}\cmt{[89]}\cite{lee2019s}\cmt{[55]}\cite{miehle2018exploring}\cmt{[51]}
-    \cite{moilanen2022measuring}\cmt{[82]}\cite{tolmeijer2021female}\cmt{[62]}\cite{yang2021effect}\cmt{[72]}\cite{yang2017perceived}\cmt{[44]}\cite{zhu2022effects}\cmt{[26]}
-\\ \cline{2-5}
-    & Social Presence & connectedness, familiarity, psychological distance & 18
-    & \cite{ceha2022expressive}\cmt{[77]}\cite{ceha2021can}\cmt{[57]}\cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}\cite{cuadra2021my}\cmt{[67]}\cite{diederich2019emulating}\cmt{[25]}\cite{gnewuch2018faster}\cmt{[19]}\cite{gnewuch2018chatbot}\cmt{[21]}\cite{gnewuch2022opposing}\cmt{[20]}\cite{go2021conversational}\cmt{[80]}\cite{khooshabeh2011does}\cmt{[37]}\cite{kim2020can}\cmt{[24]}\cite{lee2019s}\cmt{[55]}\cite{lubis2019positive}\cmt{[43]}\cite{lubold2016effects}\cmt{[86]}
-    \cite{ma2022ask}\cmt{[29]}\cite{niewiadomski2013laugh}\cmt{[85]}\cite{westerman2019believe}\cmt{[9]}    
-\\ \cline{2-5}
-    & Intimacy & intimate, rapport, quality of relationship & 7 
-    & \cite{choi2020nobody}\cmt{[54]}\cite{khooshabeh2011does}\cmt{[37]}\cite{kim2020can}\cmt{[24]}\cite{lee2020hear}\cmt{[23]}\cite{linnemann2018can}\cmt{[15]}\cite{lubold2016effects}\cmt{[86]}\cite{westerman2019believe}\cmt{[9]}
-\\ \Xhline{1.2pt}
-\multirow{2}{*}{\parbox{0.16\textwidth}{Perception of Agent's Humanness}}
-    & Human-likeness & human-like, natural, \newline artificial, machine-like & 20
-    & \cite{ashktorab2019resilient}\cmt{[88]}\cite{ceha2021can}\cmt{[57]}\cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}\cite{cox2022does}\cmt{[27]}\cite{diederich2019emulating}\cmt{[25]}\cite{gnewuch2018faster}\cmt{[19]}\cite{haas2022keep}\cmt{[78]}\cite{hu2022polite}\cmt{[76]}\cite{jeong2019exploring}\cmt{[10]}\cite{jestin2022effects}\cmt{[81]}\cite{lubis2019positive}\cmt{[43]}\cite{ma2022ask}\cmt{[29]}\cite{misu2011toward}\cmt{[83]}\cite{niewiadomski2013laugh}\cmt{[85]}
-    \cite{ouchi2019should}\cmt{[59]}\cite{seeger2021chatbots}\cmt{[35]}\cite{wester2015artificial}\cmt{[14]}\cite{westerman2019believe}\cmt{[9]}\cite{zhu2022effects}\cmt{[26]}    
-\\ \cline{2-5}
-    & Personality Traits & likeable, kind, witty, funny, creepy & 20
-    & \cite{andrews2012system}\cmt{[38]}\cite{ceha2022expressive}\cmt{[77]}\cite{ceha2021can}\cmt{[57]}\cite{chan2021kinvoices}\cmt{[74]}\cite{cuadra2021my}\cmt{[67]}\cite{haas2022keep}\cmt{[78]}\cite{habler2019effects}\cmt{[63]}\cite{healey2013relating}\cmt{[39]}\cite{hu2022polite}\cmt{[76]}\cite{huiyang2022improving}\cmt{[17]}\cite{jeong2019exploring}\cmt{[10]}\cite{kim2019comparing}\cmt{[89]}\cite{lee2020hear}\cmt{[23]}\cite{linnemann2018can}\cmt{[15]}\cite{miehle2018exploring}\cmt{[51]}
-    \cite{ouchi2019should}\cmt{[59]}\cite{volkel2021manipulating}\cmt{[68]}\cite{volkel2022user}\cmt{[75]}\cite{wester2015artificial}\cmt{[14]}\cite{zhu2022effects}\cmt{[26]} 
-\\ \Xhline{1.2pt}
-\end{tabular}%
-}
-\caption{Perception aspects}
-\label{tab:perceptions}
-\end{table*}
-
-\begin{table*}[h]
-\resizebox{\textwidth}{!}{
-\renewcommand*{\arraystretch}{1.4}
-\begin{tabular}{@{}p{0.17\textwidth} | p{0.14\textwidth} | p{0.25\textwidth} | >{\centering}p{0.09\textwidth} | p{0.34\textwidth} @{}}
-\Xhline{1.2pt}
-\multicolumn{2}{l|}{\textbf{Conversation Architecture Elements}} & \textbf{Examples} & \textbf{No. Papers} & \textbf{Papers}
-\\ \Xhline{1.2pt}
-\multirow{3}{*}{Dialog Strategy} & Social Dialog & social talk, self-disclosure  & 7
-& \cite{andrews2012system}\cmt{[38]}\cite{lee2020hear}\cmt{[23]}\cite{lubold2016effects}\cmt{[86]}\cite{moilanen2022measuring}\cmt{[82]}\cite{roy2021users}\cmt{[71]}\cite{volkel2021manipulating}\cmt{[68]}\cite{volkel2022user}\cmt{[75]}
-\\ \cline{2-5}
-
-& Initiative & proactive dialogue, conversation \newline repair & 4
-& \cite{ashktorab2019resilient}\cmt{[88]}\cite{cuadra2021my}\cmt{[67]}\cite{kraus2020effects}\cmt{[64]}\cite{xiao2021let}\cmt{[73]}
-\\ \cline{2-5}
-
-& Response Delay & response delay, typing indicator & 4
-& \cite{gnewuch2018faster}\cmt{[19]}\cite{gnewuch2018chatbot}\cmt{[21]}\cite{gnewuch2022opposing}\cmt{[20]}\cite{seeger2021chatbots}\cmt{[35]}
-\\ \Xhline{1.2pt}
-
-\multirow{2}{*}{Content Affectiveness} & Affective Language & emotional expressions, sentiment-adaptive responses & 11
-& \cite{daher2020empathic}\cmt{[58]}\cite{diederich2019emulating}\cmt{[25]}\cite{healey2013relating}\cmt{[39]}\cite{hu2022polite}\cmt{[76]}\cite{lee2019s}\cmt{[55]}\cite{lubis2019positive}\cmt{[43]}\cite{moilanen2022measuring}\cmt{[82]}\cite{seeger2021chatbots}\cmt{[35]}\cite{volkel2022user}\cmt{[75]}\cite{yang2017perceived}\cmt{[44]}\cite{zhu2022effects}\cmt{[26]}
-\\ \cline{2-5}
-
-& Humour & humorous content, jokes & 6
-& \cite{ceha2021can}\cmt{[57]}\cite{go2021conversational}\cmt{[80]}\cite{khooshabeh2011does}\cmt{[37]}\cite{miyamoto2017improving}\cmt{[46]}\cite{niewiadomski2013laugh}\cmt{[85]}\cite{volkel2021manipulating}\cmt{[68]}
-\\ \Xhline{1.2pt}
-
-\multirow{3}{*}{Content Style} & Formality & formal vs. casual, honorific \newline expressions & 9
-& \cite{cox2022does}\cmt{[27]}\cite{elsholz2019exploring}\cmt{[61]}\cite{habler2019effects}\cmt{[63]}\cite{jestin2022effects}\cmt{[81]}\cite{kim2019comparing}\cmt{[89]}\cite{ma2022ask}\cmt{[29]}\cite{moilanen2022measuring}\cmt{[82]}\cite{ouchi2019should}\cmt{[59]}\cite{volkel2022user}\cmt{[75]}
-\\ \cline{2-5}
-
-& Alignment & content matching, lexical \newline alignment, agreeableness & 7
-& \cite{healey2013relating}\cmt{[39]}\cite{hoegen2019end}\cmt{[31]}\cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}\cite{spillner2021talk}\cmt{[18]}\cite{volkel2021examining}\cmt{[69]}\cite{volkel2021manipulating}\cmt{[68]}
-\\ \cline{2-5}
-
-& Elaborateness & elaborate, concise, sentence \newline structure & 6
-& \cite{haas2022keep}\cmt{[78]}\cite{miehle2018exploring}\cmt{[51]}\cite{moilanen2022measuring}\cmt{[82]}\cite{roy2021users}\cmt{[71]}\cite{volkel2021manipulating}\cmt{[68]}\cite{volkel2022user}\cmt{[75]}
-\\ \Xhline{1.2pt}
-
-\multirow{3}{*}{Speech Format} & Prosody & pitch, intonation, speech rate, \newline spoken accent & 12
-& \cite{chan2021kinvoices}\cmt{[74]}\cite{choi2020nobody}\cmt{[54]}\cite{dubiel2020persuasive}\cmt{[60]}\cite{feijoo2021effects}\cmt{[70]}\cite{habler2019effects}\cmt{[63]}\cite{hu2021enhancing}\cmt{[56]}\cite{jestin2022effects}\cmt{[81]}\cite{kim2020can}\cmt{[24]}\cite{lubold2016effects}\cmt{[86]}\cite{misu2011toward}\cmt{[83]}\cite{tolmeijer2021female}\cmt{[62]}\cite{zhu2022effects}\cmt{[26]}
-\\ \cline{2-5}
-
-& Disfluency & fillers, interjections, repetitions, \newline typos & 6
-& \cite{ceha2022expressive}\cmt{[77]}\cite{hu2021enhancing}\cmt{[56]}\cite{jeong2019exploring}\cmt{[10]}\cite{wester2015artificial}\cmt{[14]}\cite{westerman2019believe}\cmt{[9]}\cite{yang2021effect}\cmt{[72]}
-\\ \cline{2-5}
-
-& Text Formatting & capitalization, emoticons & 6
-& \cite{fadhil2018effect}\cmt{[52]}\cite{kim2019comparing}\cmt{[89]}\cite{seeger2021chatbots}\cmt{[35]}\cite{volkel2022user}\cmt{[75]}\cite{westerman2019believe}\cmt{[9]}\cite{wilhelm2022keep}\cmt{[28]}
-\\ \Xhline{1.2pt}
-\end{tabular}%
-}
-\caption{Conversation architecture elements}
-\label{tab:cues}
-\end{table*}
-
-\subsection{Conversation Architecture Elements}
-
-As shown in Table \ref{tab:cues}, there are four categories defined for conversation architecture across 12 different elements. The details of each category and element are discussed below.
-
-The category of \textbf{dialog strategy} refers to the approach used by a conversational agent to engage in a dialogue with a user, which includes the use of social dialogs, agent-initiated content, and adding delays to responses. Specifically, the element of \textit{social dialogue} captures non-task related conversations with the user to build social connection, such as self-disclosure \cite{lee2020hear}\cmt{[23]} and small talk like chitchats \cite{lubold2016effects}\cmt{[86]}\cite{volkel2021manipulating}\cmt{[68]}. The element of \textit{initiative} captures utterances that are initiated by the agent without direct prompts from the user. For example, the agent is taking the initiative to proactively repair the conversation with a user \cite{ashktorab2019resilient}\cmt{[88]}\cite{cuadra2021my}\cmt{[67]}, or actively elicit feedback from users \cite{xiao2021let}\cmt{[73]}. Lastly, \textit{response delay} refers to the tactic of deliberatively delaying for a certain period of time before an agent responds to users \cite{gnewuch2018faster}\cmt{[19]}\cite{gnewuch2022opposing}\cmt{[20]}. It is mainly used in text-based CAs alongside visual displays of typing indicators \cite{gnewuch2018chatbot}\cmt{[21]}.
-
-\textbf{Content affectiveness} refers to the conversational agent's use of language to convey emotions or to elicit emotions from users. The architecture element of \textit{affective language} captures the injection of emotional words or phrases into the agent's utterance, such as affective expressions \cite{seeger2021chatbots}\cmt{[35]}\cite{yang2017perceived}\cmt{[44]}\cite{zhu2022effects}\cmt{[26]}, sentiment-adaptive responses \cite{diederich2019emulating}\cmt{[25]}, and encouraging words \cite{healey2013relating}\cmt{[39]}. The other element in this category, \textit{humour}, captures an agent's attempt to include jokes in its dialog. Several studies in our reviewed corpus have explored the effect of humour on various perceptions of agents (e.g. \cite{ceha2021can}\cmt{[57]}\cite{khooshabeh2011does}\cmt{[37]}).
-
-The category of \textbf{content style} refers to the variations of language used in a message aside from the content meaning of the message (i.e. how something is said). The element of \textit{formality} describes the linguistic style used by the conversational agent, whether it is formal vs. casual, such as using honorific expressions to address users \cite{ouchi2019should}\cmt{[59]}. \textit{Alignment} captures the degree that the agent aligns its utterances to the users, such as lexical alignment on the content and structural of the sentences \cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}, as well as referring and agreeing with users' utterances \cite{volkel2021examining}\cmt{[69]}. Lastly, the element of \textit{elaborateness} captures the sentence complexity and length of agents' utterances. For example, Roy et al. explored the differences in perception for variations in elaborateness such as "Cloudly, possibility of snow, high: 4, low: -10" vs "Today will be cloudy, with a high of 4 and a low of -10. Snow is predicted" \cite{roy2021users}\cmt{[71]}.
-
-Lastly, the category of \textbf{speech format} captures the non-verbal component of a conversational agent's utterances for both text and voice modalities. \textit{Disfluency} captures 
-the use of non-lexical utterances like filler words ("um, uh") \cite{hu2021enhancing}\cmt{[56]}\cite{jeong2019exploring}\cmt{[10]}, or repetition of words within a sentence \cite{yang2021effect}\cmt{[72]}. It also includes the format of using typos \cite{westerman2019believe}\cmt{[9]} for text-based agents. For voice-based agents specifically, the element of \textit{prosody} encompasses vocal qualities like pitch \cite{habler2019effects}\cmt{[63]}\cite{jestin2022effects}\cmt{[81]}, speech rate \cite{choi2020nobody}\cmt{[54]}, and spoken accent \cite{feijoo2021effects}\cmt{[70]}. For text-based CAs, the \textit{text formatting} element includes different formats agents uses to present information to users, such as using capitalization \cite{westerman2019believe}\cmt{[9]} or emoticons \cite{kim2019comparing}\cmt{[89]}\cite{wilhelm2022keep}\cmt{[28]}. 
-
-Overall there are similar number of conversation architecture elements explored across the four categories of dialog strategy, content affectiveness, content style, and speech format. As for explorations related to different modalities of agents, there is a noticeable difference in the category of speech format, where architecture elements related to voice-based agents (n=15) are explored more than text-based agents (n=7). Looking across the 12 different elements, there is good coverage of studies on the impact of affective language and prosody cues on the perceptions of agents. However, there are less studies exploring the effect of agent initiated content and response delay on the perception of agents. Specifically for the element of initiative under dialog strategy category, there is literature on conversation repairs \cite{komatani2010online}\cite{reinkemeier2022repair} and agent proactively sharing content with users \cite{dubiel2019inquisitive}\cite{zargham2022understanding}, but many of them did not not include assessments of perceptions of the CA. This may be due to the fact that the usage of agent-initiated content is relatively new, as CA interactions have historically been driven by users. As such, current research is focused on the functional aspects of agents initiating contents instead of exploring the perceptions of agents. As for response delay, there are indications that this element is under-explored in literature. Only 4 studies in our reviewed corpus used an agent with response delay, and the majority of these publications were written by the same authors.
-
-
-\subsection{Relationship Between Perceptions of Agents and Conversation Architecture}
-
-There are 183 identified relationships between perceptions of agents and conversation architecture out of the 265 explored connections that are included in our synthesized framework (Figure \ref{fig:heatmap-impact}). To compare the number of identified relationships vs. the explored connections in literature, Figure \ref{fig:heatmap-coverage} shows a side-by-side comparison between the two. The detailed analysis on the differences between explored and identified relationships are discussed in the subsections below.
-
-While the number of papers studying CAs with voice (n=27) vs. text (n=30) modalities is not significantly different, there are some interesting patterns we found with regards to the modalities of the identified relationships between perceptions of agents and conversation architecture. Overall, we confirmed the pattern found earlier that there are more conversation architecture elements explored related to voice vs. text in the speech format category. Because there are smaller number of text-based CAs using speech format elements, we also observed significantly less number of relationships between text-based CA across all perceptions of agents. other interesting findings related to modality are discussed later in this paper.
-
-\begin{figure*}[]
-  \centering
-  \includegraphics[width=\textwidth]{fig-heatmap-coverage.png}
-  \caption{Heatmap of literature for perception of conversational agents for each type of conversational architecture element}
-  \label{fig:heatmap-coverage}
-\end{figure*}
-
-\subsubsection{Perception of Interaction with Agent}
-
-The effects of conversation architecture elements on the perception of interaction with agent is the most explored connections in the corpus (n=97). Out of these explored connections, the majority of them (n=66) discovered a relationship between aspects of perception related to the perception of interaction with agent related to the studied architecture element. Looking at the difference between modalities, we noticed more voice-based agents (n=25) resulted in null relationships compared to text-based agents (n=6). The conversation architecture element of \textit{alignment} contributed the most to the null results for voice-based agents, with 9 out of 11 explored connections did not find any relationships related the perception of interaction with agents.
-
-Across the aspects for the perception of interaction, both usability and engagement were assessed frequently in the reviewed literature, with conversation architecture having effects on these perception aspects across all architecture element categories. The aspect of satisfaction was used in some studies to evaluate perception but it is not used as often as engagement or usability. Several papers that assessed user satisfactions were conversation agents within the transaction context, especially within the customer service domain (e.g. \cite{diederich2019emulating}\cmt{[25]}\cite{elsholz2019exploring}\cmt{[61]}\cite{gnewuch2018faster}\cmt{[19]}).
-
-The category of conversation architecture elements with the most identified relationships to perceptions of interaction is content style. Specifically for the element of \textit{elaborateness}, users found the use of full sentences more useful than keyword only \cite{haas2022keep}\cmt{[78]}\cite{roy2021users}\cmt{[71]}. Otherwise, the effect of an agent's elaborateness on user's perception of interaction depends on the user's preference \cite{miehle2018exploring}\cmt{[51]}, as well as the topic of discussion \cite{haas2022keep}\cmt{[78]}. As for \textit{formality}, various studies reported significant differences in perceptions of interaction between using casual vs. formal styles. Some users experienced higher engagement with agent interacting with the casual style of the conversation \cite{cox2022does}\cmt{[27]}, while in another study users reported the formal language style as less engaging as it is boring \cite{kim2019comparing}\cmt{[89]}.
-
-The speech format of an agent also resulted in a high number of identified relationships with the perception of interaction with CAs, with majority of the explored connections resulted in effects between the perception aspects and architecture elements. The element with the most identified relationships is \textit{prosody}. For example, studies found that a CA's expressiveness in vocal cues increased participants' engagement ratings \cite{zhu2022effects}\cmt{[26]}, and different pitches of voice affect users' perception of engagement and usability \cite{chan2021kinvoices}\cmt{[74]}\cite{habler2019effects}\cmt{[63]}.
-
-Dialog strategy and content affectiveness categories of conversation architecture did not have as many identified relationships with perceptions of interaction. It is worth noting the effect of using the \textit{initiative} element, as CAs that use self-initiated content are perceived as more efficient and higher quality of interaction (e.g. \cite{cuadra2021my}\cmt{[67]}). Also, some studies have discovered conflicting effects between different perception aspects of interaction for CAs using \textit{social dialog}, as users enjoyed the conversation using social talk \cite{lee2020hear}\cmt{[23]}\cite{roy2021users}\cmt{[71]}, but perceived the CA as less efficient \cite{roy2021users}\cmt{[71]}.
-
-\subsubsection{Perception of Agent's Ability}
-
-The effects of conversation architecture elements on the perception of agent's ability is the least explored connection in the corpus (n=39). Out of these explored connections, the majority of them (n=30) found relationships between the studied architecture element and the perceptions of agent's ability. There are no notable differences between the text and voice modalities of CAs for either explored connections or the identified relationships.
-
-Aspects within the perception of agent's ability had similar number of identified relationships across intelligence, competence and credibility. Our review revealed that the perceived ability of a CA is also dependent on other influencing factors in addition to conversation architecture elements. Volkel et al. \cite{kraus2020effects}\cmt{[64]} found that the perception of competence of a proactive CA is dependent on task difficulty \cite{kraus2020effects}\cmt{[64]}. Also, the perception of intelligence for an agent using fillers depended on the context of the conversation, as the filler-speaking agent was perceived as less intelligent in task-oriented conditions, but was seen as slightly more intelligent in social-oriented conditions \cite{jeong2019exploring}\cmt{[10]}.
-
-Out of the explored conversation architecture elements, \textit{prosody} had relationships identified with aspects across the perception category of agent's ability. For example, Chan et al. \cite{chan2021kinvoices}\cmt{[74]} found that agents using kin's voices are rated as more intelligent and credible than generic voices. Also, the style of speech used by an agent affects the perception of appropriateness of tone, which is an aspect of the perceived competence of an agent \cite{misu2011toward}\cmt{[83]}. Different content styles of \textit{formality} also impacts the perceived competence of an agent \cite{cox2022does}\cmt{[27]}\cite{jestin2022effects}\cmt{[81]}. Specifically related to perceived credibility of an agent, being \textit{lexically aligned} with the user resulted improved the rating of trustworthiness of an agent \cite{hoegen2019end}\cmt{[31]}\cite{linnemann2018can}\cmt{[15]}. There were mixed results on the use of emoticons within the \textit{text formatting} element. One study found the chatbot using emoticons as less trustworthy \cite{wilhelm2022keep}\cmt{[28]}, while another study found that users assigned higher scores for confidence to the agent using emojis \cite{fadhil2018effect}\cmt{[52]}. 
-
-There are several conversation architecture elements with little to no explorations to the perception of agent's ability. Specifically, both categories of dialog strategy and content affectiveness are minimally explored in our reviewed corpus, with no explored connections with \textit{response delay} and only one or two connections explored for \textit{social dialog} and \textit{humour}. While the content style category had coverage in some aspects of perceived abilities, it is worth noting that \textit{elaborateness} did not have any explored connections with perceived ability of agents. Further research in these areas is needed to fill these gaps in understanding.
-
-
-\subsubsection{Perception of Sociability with Agent}
-
-The perception of agent's humanness is the second most explored category within our reviewed corpus (n=64), with majority of the connections identified relationship between the studied conversation architecture elements and the anthropomorphized perceptions of agent (n=49). Interestingly, studies explored more perceptions of sociability with agent related to voice-based CAs (n=40) compared to text-based CAs (n=24), potentially due to the assumption that interactions with text-based agents are perceived as less personal and more formal \cite{kocielnik2018designing}. There are some mixed results for voice-based CAs, as 12 out of the 28 connections did not find any significant results. Drilling down to the specific elements, we noticed that the use of \textit{alignment} in voice-based agents did not effect the perception of sociability with agent \cite{healey2013relating}\cmt{[39]}\cite{linnemann2018can}\cmt{[15]}. We didn't have data on text-based agents' perceived social connections with users to compare with voice-based agents, as the studies using alignment and text modality in our corpus did not assess this aspect category of perception.
-
-Across the aspects in this perception category, conversation tone had the most number of identified relationship (n=27) with the perceived social connection with CAs, followed by the aspect of social presence (n=17). There are only 5 relationships found that are linked to the perception aspect of intimacy. One reason for this is half of the explored connections did not have any effect on the perception of sociability with agent, such as the use of capitalization \cite{westerman2019believe}\cmt{[9]}, lexical alignment \cite{linnemann2018can}\cmt{[15]}, or social talk \cite{lubold2016effects}\cmt{[86]}. For the perception aspect of social presence, we noticed a gap in the exploration of conversation architecture elements of formality, alignment, and elaborateness in the content style category, as there are no papers explored at this intersection.
-
-Looking at the different categories of conversation architecture elements, the heatmap (Figure \ref{fig:heatmap-impact} shows that there are not many relationships in content style category that are related to the perceived sociability with CAs in general, with most of the discovered effects concentrated at the intersection of \textit{formality} and conversation tone. Studies have found that CAs using casual style of conversation are perceived as warm, empathetic and friendly \cite{jestin2022effects}\cmt{[81]}\cite{kim2019comparing}\cmt{[89]}, while CAs using formal style of conversation are perceived as polite but lacks empathy \cite{cox2022does}\cmt{[27]}. The rest of the architecture elements and perception aspects of sociability are minimally explored in literature, which indicates the need for more research in this area.
-
-There are a few specific conversation architecture elements that had more identified relationships with perceptions of sociability with agent. Specifically, CAs using of \textit{affective language} were perceived to be more empathetic \cite{daher2020empathic}\cmt{[58]}\cite{diederich2019emulating}\cmt{[25]}\cite{yang2017perceived}\cmt{[44]} and emotionally expressive \cite{zhu2022effects}\cmt{[26]}, as well as being more emotional connected with their users \cite{lee2019s}\cmt{[55]}\cite{lubis2019positive}\cmt{[43]}. Also, different variations of a voice-based CA's \textit{prosody} have effects on the perceived sociability with agent, such as an agent using expressive prosody is assessed as more intimate and more similar with the user \cite{kim2020can}\cmt{[24]}. Lastly, the conversation architecture element of \textit{humour} has identified relationships across the social connection category of perception. Clark et al. \cite{clark2019makes} found that humour is an important conversational characteristic for human-human interactions, but viewed as a novelty feature for human-agent conversations. However, in our review we found that humor has effects on human-agent relationships, as humorous agents are rated as more friendly, intimate, and similar by users compared to non-humorous agents \cite{go2021conversational}\cmt{[80]}\cite{khooshabeh2011does}\cmt{[37]}. 
-
-
-\subsubsection{Perception of Agent's Humanness}
-
-There are 55 explored connections between conversation architecture elements and the perception of sociability with agents, with majority of them (n=38) finding identified relationships in literature. There are significantly more explorations for voice-based agents (n=39) as compared to text-based agents (n=16). Previous studies have found that modality may have an effect on the perception of humanness, as voice-based agents are perceived as more human-like as compared to text-based agents \cite{cho2019effects}. Out of the 39 explored connections for voice-based agents, 14 of them did not result in any relationships. This is especially evident in the architecture element of \textit{affective language} for voice-based agents, as most of the connections resulted in null relationships. For example, when comparing the ratings of human-likeness or likeability for a speech agent employing expressive words to the one not using any, Zhu et al \cite{zhu2022effects}\cmt{[26]} were unable to detect any statistically significant differences in both of the observation study and interaction study.
-
-Across the aspects in this perception category, both human-likeness and personality traits have relationships with almost all the conversation architecture elements. Specifically for the use of \textit{prosody} elements, our review found some opposing effects on the perception of the agent's humanness. In the case of Chan et al's study \cite{chan2021kinvoices}\cmt{[74]}, participated rated the agent using kin voices as significantly more likeable compared to the generic voices, but it was perceived as eerie. This may be a warning indicator to watch out for the uncanny valley effect \cite{mori2012uncanny} and advise CA designers to carefully select conversation architecture elements to elicit anthropomorphized perceptions.
-
-There are a few notable conversation architecture elements related to the perceived humanness of conversational agents. The use of \textit{prosody} such as varying pitch, intonation and speech rate has more identified relationships with the perceived personality traits of an agent as compared to the perceived human-likeness, especially on the aspect of likeability \cite{choi2020nobody}\cmt{[54]}\cite{jestin2022effects}\cmt{[81]}\cite{misu2011toward}\cmt{[83]}. For the architecture elements of \textit{disfluency}, the type of impact on the perception of humanness depended on the context of the conversation. Studies have found that participants perceived the filler-condition agent as more likeable in the social-oriented situation, but did not find the same effect in task-oriented situations \cite{jeong2019exploring}\cmt{[10]}\cite{wester2015artificial}\cmt{[14]}. The use of \textit{alignment} in an agent had a number of identified relationships with the perception of personality traits, with some studies finding CAs that are lexically aligned with a user are more likeable \cite{huiyang2022improving}\cmt{[17]}\cite{linnemann2018can}\cmt{[15]}.  
-
-
-%-------------
-\section{Discussions}
-
-\subsection{Research Challenges and Opportunities}
-
-%Three major needs emerged from the trends identified by our review: 1) 2) 3).
-
-\subsubsection{The Need for Consistent Evaluation Protocols for Perceptions of Agents}
-
-We found a diversity of approaches used to assess perceptions of agents in our reviewed corpus. While we made our best efforts to group perceptions used in literature based on similarity with each other, the inconsistent and composite nature of these perception assessments makes it challenging to synthesize them into a framework that contains homogeneous components in each perception aspect that can be compared with each other.
-
-Based on the literature reviewed in this paper, it is unclear whether perception aspects using similar labels are being evaluated \textit{consistently} through different approaches. For example, we found several methods used to assess the perceived human-likeness of an agent. A commonly used survey is adapted from the Godspeed questionnaire \cite{bartneck2009measurement}, which evaluates human-likeness based on users' impression of the agent as fake / natural, machinelike / humanlike, unconscious / conscious, and artificial / lifelike (used by \cite{hoegen2019end}\cmt{[31]}, \cite{jeong2019exploring}\cmt{[10]} and \cite{ouchi2019should}\cmt{[59]}). Another method used to evaluate human-likeness is adapted from Holtgraves et al.'s \cite{holtgraves2007perceiving} questionnaire, which asks users questions related to the agent's perceived human-likeness, skillfulness, thoughtfulness, politeness, responsiveness and engagement (used by \cite{diederich2019emulating}\cmt{[25]} and  \cite{gnewuch2018faster}\cmt{[19]}). One study \cite{westerman2019believe}\cmt{[9]} used the Ascend of Man scale \cite{kteily2015ascent} with pictures showing the evolution from ape to man, asking users to choose a depiction that best represents the agent's perceived human-likeness. It is unclear whether these different methods are capturing assessments of similar perception aspects that can be compared with each other. Another example is the evaluation of the perception of agent's empathy. In Diedrech et al.'s study \cite{diederich2019emulating}\cmt{[25]}, empathy is assessed by asking users whether the CA is giving users individual or personal attention. In another study that also studies the perception of empathy \cite{daher2020empathic}\cmt{[58]}, the RoPE Scale \cite{charrier2019rope} is used with questions like "the robot cares about my feelings" or "the robot comforts me when I am upset." These two different evaluations of empathy seem to have different underlying meanings, one assessing the personalization aspect of CAs, while the other is assessing the emotional aspect of CAs.
-
-In addition the problem of consistency in evaluating perceptions, there is the issue of  \textit{composite measures} being used in the assessment of users' perceptions. These composite measures collapse multiple aspects of perception into one measurement, making it impossible to break down perceptions into more granular aspects for analysis. One such example is Ma et al's study \cite{ma2022ask}\cmt{[29]} on the different approaches for CAs to reply to users' uncertain queries. A single UX score is used to evaluate the users' perceptions, which composes of questions on whether the user thinks the CA's response is pleasing / trustworthy / natural / acceptable / shorten the distance between CA and user. The UX score encompasses multiple aspects across several perception categories. While this study has found significant effect for the use of formal language on the user rated UX score, it is not possible to understand how the details of formality is related to the perception categories of interaction (pleasing, acceptable), sociability (shorten the distance between CA and user), and humanness (natural, trustworthy). The humanness questionnaire from Holtgraves et al \cite{holtgraves2007perceiving} has a similar problem, evaluating across perception categories of interaction (responsiveness, engagement), ability (skillfulness), sociability (politeness), and humanness (human-likeness, thoughtfulness).
-
-There has been some effort recently towards unifying the evaluation of conversational agents, such as the work by Finch et al. \cite{finch2020towards} presenting a comprehensive analysis of current evaluation protocols. More research is needed in this area to standardize the assessment of perceptions to make them consistent, granular, and comparable across literature.
-
-\subsubsection{Investigate the Relationship Across Perception Aspects of Agents}
-
-There is evidence in literature that perception aspects of agents have effects on each other. For instance, Moussawi et al. \cite{moussawi2021perceptions}\cmt{[36]} conducted a study to understand the correlations between different perceptions related to users' intention to adopt a conversational agent. Specifically, they found a correlation within the category of perceived ability, where an agent's perceived intelligence is positively correlated to the perceived initial trust of the agent. This study also found that users with higher perceived intelligence of an agent are more likely to attribute higher ratings for perceived human-likeness, as well as for the usability and engagement aspects in the perception category of interaction. Lastly, the authors found that perceived humanness have a positive impact on perceived enjoyment, which lead to higher intention to adopt the CA. This study outlines that the perception aspects identified in this paper are not independent of each other.
-
-Correlations between perception aspects are discussed in a few of the papers we reviewed. One of the studies showed that the CA's perceived personality trait of agreeableness has an influence on the users' perception of credibility \cite{andrews2012system}\cmt{[38]}. Seeger et al's study found a similar correlation, where higher perceived anthropomorphism led to lower loss of trust \cite{seeger2021chatbots}\cmt{[35]}. There are also correlations between aspects found within the same perception category, such as a speech agent that is rated higher in perceived human-likeness was associated with higher likability ratings \cite{zhu2022effects}\cmt{[26]}. Also, within the perception category of social connection, one study found that social distance is positively related to the perceived social attraction \cite{westerman2019believe}\cmt{[9]}.
- 
-These correlations demonstrate that some perception aspects have effects on each other, either within the same category or across different categories. While there are limited research into this area, further investigations are needed to understand the relationships between various perception aspects.
-
-
-\subsubsection{Research Directions for the Effects of Conversation Architecture on Users' Perceptions}
-
-Our synthesized framework (Figure \ref{fig:heatmap-impact}) serves as a foundational understanding on the effect of conversation architecture on the perception of agents. It showcases the density of explored relationships between them, as well as highlighting areas that are under-explored. In order to continue building our knowledge, it is important to investigate further into the effect of contextual factors as well as multiple conversation architecture elements on users' perceptions.
-
-There are a few \textit{under-explored areas} in our synthesized framework. The perception category of agent's ability has the least number of explored connections with conversation architecture compared to other perception categories. Specifically, more studies are needed to understand the effects of social dialog, response delay, humour and elaborateness on users' perceptions of agents' ability. For the perception category of sociability with agent, there is a general lack of explored connections with the conversation architecture category of content style, especially for alignment and elaborateness elements. Lastly, more studies on the effect of dialog strategy for conversation architecture elements of initiative and response delay on the perceptions of agent are needed.
-
-Some studies have discussed how differences in \textit{contextual factors} resulted in variations in the perceptions of agents while using similar conversation architecture elements. One of the factors is users' experience with CAs, as Gnewuch et al. \cite{gnewuch2018faster}\cmt{[19]} found that experienced users perceived the agent with a response delay as lower in social presence because it is seen as inefficient to wait for the CA to respond, but novice users perceived higher social presence conversing with the CAs using response delays because it is more similar to conversations with human partners \cite{gnewuch2018faster}\cmt{[19]}. User characteristics is another factor, as the perceived trustworthiness of a style matching agent depended on users' own conversational style \cite{hoegen2019end}\cmt{[31]}. Some other contextual factors that resulted in differences in perceptions of agent include the purpose of conversation (e.g. transactional vs. social) \cite{jeong2019exploring}\cmt{[10]}, anonymity of the conversation \cite{lee2020hear}\cmt{[23]}, and the sensitivity of information discussed in the interaction \cite{cox2022does}\cmt{[27]}. A comprehensive review to identify these contextual factors as well as to understand their effects on the perceptions of agents across various conversation architecture elements would be useful to tailor CA design for specific situations. 
-
-As we gain a better understanding about the effects of a single conversation architecture element on the perceptions of agents, we can extend the research to using \textit{multiple conversation architecture elements} in an agent. Several papers in our reviewed corpus incorporated composite elements in an agent, such as the design of an anthropomorphized chatbot using elements such as affective language, emoticons, response delays to assess users' perceptions compared to a non-anthropomorphized chatbot \cite{seeger2021chatbots}\cmt{[35]}. In addition to explore the combined effects of conversation architecture elements on users' perceptions, it would also be interesting to understand the relative importance of each element on perceptions. Some studies analyzed the effect of modifying conversation architecture elements individually, as well as their combined effect on user's perceptions (e.g. \cite{habler2019effects}\cmt{[63]}\cite{lubold2016effects}\cmt{[86]}\cite{zhu2022effects}\cmt{[26]}). Specifically, Habler et al. \cite{habler2019effects}\cmt{[63]} found that the effect for social dialog is higher than the effect for prosody on the perception of agents. 
-
-
-\subsection{Ethical Considerations}
-
-The designers of conversational agents need to consider ethical implications and potential negative impacts for users. This section discusses three main areas of concerns related to the effect of conversation architecture on the perceptions of agents: gender stereotypes, influencing user's actions and privacy concerns.
-
-For the element of prosody, various studies in our corpus explored the effect of different pitches on the perceptions of agents. Even in studies that are not explicitly analyzing the effect of different gendered voices in an agent, possible stereotypes may still exist in the study. Based on our reviewed corpus, studies found that lower pitches commonly associated with men are considered to be more desirable, authoritative but less friendly \cite{tolmeijer2021female}\cmt{[62]}\cite{jestin2022effects}\cmt{[81]}. For Dubiel et al's study \cite{dubiel2020persuasive}\cmt{[60]}, the agent with lower mean pitch was selected as the more persuasive voice. These results may be demonstrating users' unconscious bias to select a male sounding voice as more persuasive and authoritative over female sounding voices that are commonly associated with higher pitches. While some guidelines recommend designing agents to be androgynous to avoid gender stereotypes \cite{ruane2019conversational}, there are limitations in creating gender-ambiguous voices. Currently there is no defined guidelines on what is perceived as a gender-neutral voice \cite{jestin2022effects}\cmt{[81]}. There is also a lack of voice generators available to generate voices that are perceived as androgynous \cite{tolmeijer2021female}\cmt{[62]}.
-
-Studies have demonstrated that conversation architecture elements can be used to design perceptions of agents to make CAs more persuasive. This opens up the ethical issue of influencing users' attitudes and behaviours through these persuasion techniques. In a study by Chan et al \cite{chan2021kinvoices}\cmt{[74]}, they found that CAs using kin's voices are perceived as more credible and likeable, with a higher perceived social presence with the agent. These perceptions contributes to the agent being more engaging and persuasive, therefore people are more likely to comply with its requests. Andrew et al \cite{andrews2012system}\cmt{[38]} found that tailoring the personality of the CA to users will positively impact an agent's persuasiveness. These persuasion techniques can be beneficial to help users achieve their goals, but can also be used for harmful actions, such as trying to get users to believe in false information.
-
-Another key area of concern is privacy. Given the natural language format of conversational agents, users may be disclosing more sensitive and personal information than needed for the interaction. In relationship to conversation architecture, using elements like self-disclosure and persuasive voice prosody settings could result in users perceiving higher trust with the agent, leading them to disclose more sensitive information  \cite{lee2020hear}\cmt{[23]}\cite{dubiel2020persuasive}\cmt{[60]}. This can expose users to attacks, such as CAs using voice impersonation to ask for personal information for malicious intents \cite{chan2021kinvoices}\cmt{[74]}. Designing for perceptions of agents requires careful consideration of privacy issues including the sensitivity of the data, who has access to it, and how to protect against nefarious users.
-
-\subsection{Limitations}
-
-Our systematic literature review was limited to papers published in the ACM Digital Library between 2010 and 2022. We may have missed literature published outside this time period, as well as in other libraries. Also, most of the studies in our corpus are based on lab experiments using short interactions with users. The generalizability of these findings need to be verified through longer term engagements with conversational agents deployed in real world situations. Lastly, research without empirical studies on the perception of agents are excluded based on our selection criteria. We may have missed some influential findings in these papers. %To better understand the relationships between conversation architecture elements and the perceptions of agents, we plan to conduct future reviews in literature and user studies to understand their real-world impacts.
-
-
-\section{Conclusions}
-
-In this paper, we discussed the results of a systematic review of existing literature published in the ACM Digital Library on the effect of conversation architecture elements on the perceptions of CAs. Through our synthesis of 57 papers in our corpus, we present a framework outlining the relationships between elements of agents’ conversation architecture (dialog strategy, content affectiveness, content style and speech format) and aspects of users’ perception (interaction, ability, sociability and humanness). During our analysis, we found the need for consistent protocols in evaluating perceptions of agents, as measurements are inconsistent across studies. Further research is needed to investigate the under-explored areas in the framework, the relationship across perception aspects, the influence of contextual factors, and the effect of composite conversation architecture elements on users' perceptions. While our research contribute to the design conversation architecture to orchestrate specific perceptions of agent, we urge designers to incorporate ethical perspectives into their design considerations.
+\input{sections/1-introduction}
+\input{sections/2-related_work}
+\input{sections/3-method}
+\input{sections/4-findings}
+\input{sections/5-discussion}
+\input{sections/6-conclusion}
 
 %%
 %% The acknowledgments section is defined using the "acks" environment
@@ -536,7 +189,7 @@ TBD
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{config/ACM-Reference-Format}
 \bibliography{references}
 
 %%
